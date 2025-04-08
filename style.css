@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 /* Custom animations */
@@ -43,7 +44,7 @@ html {
     font-size: 1.1rem;
   }
 }
-/* Add to ppw.css */
+
 /* Typing animation */
 .typewriter {
   border-right: 2px solid white;
@@ -91,4 +92,60 @@ html {
     flex-direction: column;
     gap: 0.75rem;
   }
+}
+
+/* Improved mobile menu */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    background: white;
+    transition: all 0.3s;
+  }
+  nav ul.active {
+    left: 0;
+  }
+  #mobile-menu-button {
+    display: block;
+  }
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.btn-hover:active {
+  transform: translateY(-1px);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+.link-underline:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s;
+}
+.link-underline:hover:after {
+  width: 100%;
+}
+
+:root {
+  --primary-color: #0ea5e9;
+  --secondary-color: #8b5cf6;
 }

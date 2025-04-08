@@ -30,6 +30,8 @@ themeToggle.addEventListener('click', () => {
   themeIcon.textContent = isDark ? '☀️' : '🌙';
 });
 
+// [Rest of your ppw.js code remains the same]
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -120,3 +122,38 @@ function typeWriter() {
 
 // Start the typing animation after the initial animations
 setTimeout(typeWriter, 2000);
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const navMenu = document.querySelector('nav ul');
+
+mobileMenuButton.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+// Project Modals
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const title = this.querySelector('h3').textContent;
+    const description = this.querySelector('p').textContent;
+    
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-content').innerHTML = `
+      <p>${description}</p>
+      <h4>Technologies Used:</h4>
+      <ul>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>MongoDB</li>
+      </ul>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>Real-time updates</li>
+        <li>Responsive design</li>
+      </ul>
+    `;
+    document.getElementById('project-modal').classList.remove('hidden');
+  });
+});
+
+document.getElementById('close-modal').addEventListener('click', () => {
+  document.getElementById('project-modal').classList.add('hidden');
+});
