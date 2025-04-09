@@ -7,29 +7,35 @@ AOS.init({
 
 // Dark/Light Mode Toggle
 const themeToggle = document.getElementById('theme-toggle');
+const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 const themeIcon = document.getElementById('theme-icon');
+const themeIconMobile = document.getElementById('theme-icon-mobile');
 const body = document.body;
 
-// Check for saved user preference or use system preference
+// Apply saved theme or system preference
 const savedTheme = localStorage.getItem('theme') || 
-                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-// Apply the saved theme
 if (savedTheme === 'dark') {
   body.classList.add('dark');
   themeIcon.textContent = '☀️';
+  themeIconMobile.textContent = '☀️';
 } else {
   body.classList.remove('dark');
   themeIcon.textContent = '🌙';
+  themeIconMobile.textContent = '🌙';
 }
 
-themeToggle.addEventListener('click', () => {
+function toggleTheme() {
   body.classList.toggle('dark');
   const isDark = body.classList.contains('dark');
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
   themeIcon.textContent = isDark ? '☀️' : '🌙';
-});
+  themeIconMobile.textContent = isDark ? '☀️' : '🌙';
+}
 
+themeToggle.addEventListener('click', toggleTheme);
+themeToggleMobile.addEventListener('click', toggleTheme);
 // [Rest of your ppw.js code remains the same]
 
 // Smooth scrolling for anchor links
@@ -122,12 +128,23 @@ function typeWriter() {
 
 // Start the typing animation after the initial animations
 setTimeout(typeWriter, 2000);
-// Mobile menu toggle
+// Mobile Menu Toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
-const navMenu = document.querySelector('nav ul');
+const mobileMenu = document.getElementById('mobile-menu');
 
 mobileMenuButton.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
+  mobileMenu.classList.toggle('hidden');
+  mobileMenuButton.innerHTML = mobileMenu.classList.contains('hidden') 
+    ? '<i class="fas fa-bars text-xl"></i>' 
+    : '<i class="fas fa-times text-xl"></i>';
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+  });
 });
 // Project Modals
 document.querySelectorAll('.project-card').forEach(card => {
@@ -156,4 +173,29 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 document.getElementById('close-modal').addEventListener('click', () => {
   document.getElementById('project-modal').classList.add('hidden');
+});
+// Back to Top Button
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    backToTopButton.classList.remove('hidden');
+  } else {
+    backToTopButton.classList.add('hidden');
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+// Loading Spinner
+window.addEventListener('load', () => {
+  const spinner = document.getElementById('loading-spinner');
+  spinner.style.opacity = '0';
+  setTimeout(() => {
+    spinner.style.display = 'none';
+  }, 500);
 });
