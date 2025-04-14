@@ -12,48 +12,55 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
- <!-- In your index.html -->
-<header class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-50">
-  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Shilpi Kumari</div>
+  <header class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Shilpi Kumari</div>
+      
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-6 items-center">
+        <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
+        <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
+        <li><a href="#certifications" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certificates</a></li>
+        <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+        <li>
+          <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 dim:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dim:hover:bg-gray-700 transition-colors flex items-center justify-center w-10 h-10" data-tooltip="Toggle theme">
+            <span id="theme-icon" class="text-gray-800 dark:text-gray-200 dim:text-gray-300">
+              <i class="fas fa-moon dark:hidden dim:hidden"></i>
+              <i class="fas fa-sun hidden dark:inline dim:hidden"></i>
+              <i class="fas fa-adjust hidden dark:hidden dim:inline"></i>
+            </span>
+          </button>
+        </li>
+      </ul>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </nav>
     
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex space-x-6">
-      <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
-      <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
-      <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
-      <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
-      <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
-      <li>
-        <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-          <span id="theme-icon">🌙</span>
-        </button>
-      </li>
-    </ul>
-    
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none">
-      <i class="fas fa-bars text-xl"></i>
-    </button>
-  </nav>
-  
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white dark:bg-gray-800 shadow-lg">
-    <ul class="flex flex-col space-y-2 px-6 py-4">
-      <li><a href="#home" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
-      <li><a href="#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
-      <li><a href="#skills" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
-      <li><a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
-      <li><a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
-      <li class="pt-4">
-        <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-          <span id="theme-icon-mobile">🌙</span>
-        </button>
-      </li>
-    </ul>
-  </div>
-
-</header>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white dark:bg-gray-800 shadow-lg">
+      <ul class="flex flex-col space-y-2 px-6 py-4">
+        <li><a href="#home" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
+        <li><a href="#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
+        <li><a href="#skills" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
+        <li><a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
+        <li><a href="#certifications" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certificates</a></li>
+        <li><a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+        <li class="pt-4">
+          <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            <span id="theme-icon-mobile" class="text-gray-800 dark:text-gray-200">
+              <i class="fas fa-moon dark:hidden"></i>
+              <i class="fas fa-sun hidden dark:inline"></i>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
   <!-- Hero Section   -->
 <section id="home" class="h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
   
@@ -90,9 +97,11 @@
       <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600 hover:shadow-lg transition-all font-medium flex items-center justify-center">
         <i class="fas fa-paper-plane mr-2"></i> Contact Me
       </a>
-      <a href="path/to/resume.pdf" download class="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 hover:shadow-lg transition-all font-medium flex items-center justify-center">
-        <i class="fas fa-download mr-2"></i> Download CV
-      </a>
+      <a href="https://github.com/shilpikumarii/RESUME" 
+   download="Shilpi_Kumari_Resume.pdf" 
+   class="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 hover:shadow-lg transition-all font-medium flex items-center justify-center">
+  <i class="fas fa-download mr-2"></i> Download CV
+</a>
     </div>
     
     <div class="mt-12 animate-bounce" data-aos="fade-up" data-aos-delay="600">
@@ -281,7 +290,8 @@
         </div>
       </div>
       
-      <!-- JavaScript Certificate -->
+      <div id="cert-more" class="hidden transition-all duration-500 ease-in-out">
+       <!-- JavaScript Certificate -->
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
         <img src="CERTIFICATE/JAVASCRIPT.jpeg" alt="JavaScript Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">JavaScript Programming</h3>
@@ -380,6 +390,15 @@
           </a>
         </div>
       </div>
+      </div>
+      
+      <div class="section-buttons">
+        <button onclick="toggleCerts()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+          View More Certificates
+        </button>
+      </div>
+        
+      
     </div>
   </div>
 </section>
@@ -427,7 +446,8 @@
           </a>
         </div>
       </div>
-      
+
+      <div id="proj-more" class="hidden transition-all duration-500 ease-in-out">
        <!-- Card Project -->
        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="IMAGE/card.jpg" alt="Card Project" class="rounded-lg w-full h-48 object-cover mb-4">
@@ -554,14 +574,38 @@
             </a>
           </div>
         </div>
-        
-        <!-- Banner -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
+
+         <!-- Banner -->
+         <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
           <img src="IMAGE/coffe-Banner.jpg" alt="Banner" class="rounded-lg w-full h-48 object-cover mb-4">
           <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Banner Design</h3>
           <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive banner design.</p>
           <div class="mt-4 flex space-x-4">
             <a href="https://github.com/shilpikumarii/banner" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+         <!-- FOOTBALL Game -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
+          <img src="IMAGE/game.jpg" alt="FOOTBALL Game" class="rounded-lg w-full h-48 object-cover mb-4">
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">FOOTBALL Game</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">An interactive football game built with JavaScript.</p>
+          <div class="mt-4 flex space-x-4">
+            <a href="https://github.com/shilpikumarii/FOOTBALLgame" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+          </div>
+        </div>
+        
+        <!-- Alarm App -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
+          <img src="IMAGE/alarm-clock-app-senyaars.png" alt="Alarm App" class="rounded-lg w-full h-48 object-cover mb-4">
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Alarm App</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">A functional alarm application with JavaScript.</p>
+          <div class="mt-4 flex space-x-4">
+            <a href="https://github.com/shilpikumarii/Alarm-App" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
               <i class="fab fa-github mr-2"></i> GitHub
             </a>
           </div>
@@ -578,6 +622,15 @@
             </a>
           </div>
         </div>
+      </div>
+      
+      <div class="section-buttons">
+        <button onclick="toggleProjects()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+          View More Projects
+        </button>
+      </div>
+        
+       
       </div>
     </div>
    
@@ -698,6 +751,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="ppw.js"></script>
   <script src="script.js"></script>
-  <script src="app.js"></script>
+  <script src="tailwind.config.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

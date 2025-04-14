@@ -5,38 +5,68 @@ AOS.init({
   easing: 'ease-in-out'
 });
 
-// Dark/Light Mode Toggle
+// Theme Toggle with 3 states (light, dark, dim)
 const themeToggle = document.getElementById('theme-toggle');
 const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-const themeIcon = document.getElementById('theme-icon');
-const themeIconMobile = document.getElementById('theme-icon-mobile');
 const body = document.body;
 
-// Apply saved theme or system preference
-const savedTheme = localStorage.getItem('theme') || 
-                   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+// Possible theme states
+const themes = ['light', 'dark', 'dim'];
+let currentThemeIndex = 0;
 
-if (savedTheme === 'dark') {
-  body.classList.add('dark');
-  themeIcon.textContent = '☀️';
-  themeIconMobile.textContent = '☀️';
-} else {
-  body.classList.remove('dark');
-  themeIcon.textContent = '🌙';
-  themeIconMobile.textContent = '🌙';
+// Initialize theme from localStorage or system preference
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    currentThemeIndex = themes.indexOf(savedTheme);
+    if (currentThemeIndex === -1) currentThemeIndex = 0;
+  } else {
+    currentThemeIndex = window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0;
+  }
+  applyTheme();
 }
 
+// Apply current theme
+function applyTheme() {
+  // Remove all theme classes first
+  body.classList.remove('light', 'dark', 'dim');
+  
+  // Add current theme class
+  body.classList.add(themes[currentThemeIndex]);
+  
+  // Update icons
+  updateThemeIcons();
+  
+  // Save to localStorage
+  localStorage.setItem('theme', themes[currentThemeIndex]);
+}
+
+// Update the theme icons
+function updateThemeIcons() {
+  const themeIcon = document.getElementById('theme-icon');
+  const themeIconMobile = document.getElementById('theme-icon-mobile');
+  
+  themeIcon.innerHTML = '';
+  themeIconMobile.innerHTML = '';
+  
+  const icons = {
+    light: '<i class="fas fa-moon"></i>',
+    dark: '<i class="fas fa-sun"></i>',
+    dim: '<i class="fas fa-adjust"></i>'
+  };
+  
+  themeIcon.innerHTML = icons[themes[currentThemeIndex]];
+  themeIconMobile.innerHTML = icons[themes[currentThemeIndex]];
+}
+
+// Toggle theme on button click
 function toggleTheme() {
-  body.classList.toggle('dark');
-  const isDark = body.classList.contains('dark');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  themeIcon.textContent = isDark ? '☀️' : '🌙';
-  themeIconMobile.textContent = isDark ? '☀️' : '🌙';
+  currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+  applyTheme();
 }
 
 themeToggle.addEventListener('click', toggleTheme);
 themeToggleMobile.addEventListener('click', toggleTheme);
-// [Rest of your ppw.js code remains the same]
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -51,7 +81,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         behavior: 'smooth'
       });
       
-     
       if (history.pushState) {
         history.pushState(null, null, targetId);
       } else {
@@ -61,16 +90,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Contact form handling
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
-    
     
     console.log({ name, email, message });
     
@@ -79,6 +107,7 @@ if (contactForm) {
   });
 }
 
+// GSAP animations
 gsap.from(".hero-title", {
   duration: 1.5,
   y: -50,
@@ -93,7 +122,8 @@ gsap.from(".hero-subtitle", {
   delay: 0.3,
   ease: "power3.out"
 });
-// Typing animation in ppw.js (add at the bottom)
+
+// Typing animation
 const typingText = document.getElementById('typing-text');
 const professions = ["Web Developer", "Frontend Engineer", "UI/UX Enthusiast", "Problem Solver"];
 let professionIndex = 0;
@@ -128,6 +158,7 @@ function typeWriter() {
 
 // Start the typing animation after the initial animations
 setTimeout(typeWriter, 2000);
+
 // Mobile Menu Toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -146,34 +177,7 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
     mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
   });
 });
-// Project Modals
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('click', function() {
-    const title = this.querySelector('h3').textContent;
-    const description = this.querySelector('p').textContent;
-    
-    document.getElementById('modal-title').textContent = title;
-    document.getElementById('modal-content').innerHTML = `
-      <p>${description}</p>
-      <h4>Technologies Used:</h4>
-      <ul>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>MongoDB</li>
-      </ul>
-      <h4>Key Features:</h4>
-      <ul>
-        <li>Real-time updates</li>
-        <li>Responsive design</li>
-      </ul>
-    `;
-    document.getElementById('project-modal').classList.remove('hidden');
-  });
-});
 
-document.getElementById('close-modal').addEventListener('click', () => {
-  document.getElementById('project-modal').classList.add('hidden');
-});
 // Back to Top Button
 const backToTopButton = document.getElementById('back-to-top');
 
@@ -191,6 +195,7 @@ backToTopButton.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
 // Loading Spinner
 window.addEventListener('load', () => {
   const spinner = document.getElementById('loading-spinner');
@@ -198,4 +203,51 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     spinner.style.display = 'none';
   }, 500);
+});
+
+// View More/Less functionality
+function toggleCerts() {
+  const certMore = document.getElementById('cert-more');
+  const btn = event.target;
+  certMore.classList.toggle('hidden');
+  btn.textContent = certMore.classList.contains('hidden') ? 'View More Certificates' : 'View Less Certificates';
+}
+
+function toggleProjects() {
+  const projMore = document.getElementById('proj-more');
+  const btn = event.target;
+  projMore.classList.toggle('hidden');
+  btn.textContent = projMore.classList.contains('hidden') ? 'View More Projects' : 'View Less Projects';
+}
+
+// Highlight active navigation link
+function highlightActiveNav() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      
+      if (pageYOffset >= (sectionTop - 100)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('text-blue-600', 'dark:text-blue-400', 'font-medium');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('text-blue-600', 'dark:text-blue-400', 'font-medium');
+      }
+    });
+  });
+}
+
+// Initialize theme when page loads
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  highlightActiveNav();
 });

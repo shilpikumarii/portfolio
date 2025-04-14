@@ -208,3 +208,160 @@ html {
     font-size: 14px;
   }
 }
+/* Certifications Section */
+#certifications .text-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#certifications button {
+  white-space: nowrap;
+  margin: 0 auto;
+}
+/* Projects Section */
+#projects .text-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#projects button {
+  white-space: nowrap;
+  margin: 0 auto;
+}
+/* For both sections */
+#certifications .text-center, 
+#projects .text-center {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* space between buttons */
+  flex-wrap: wrap;
+}
+
+#certifications button, 
+#projects button {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Center both buttons in one line */
+.section-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.section-buttons button {
+  white-space: nowrap;
+}
+/* Navigation Links */
+nav a {
+  position: relative;
+  padding: 8px 0;
+}
+
+nav a.text-blue-600:after, 
+nav a.text-blue-400:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
+nav a:not(.text-blue-600):not(.text-blue-400):after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav a:hover:after {
+  transform: scaleX(1);
+}
+/* Theme Toggle Button Styles */
+#theme-toggle, #theme-toggle-mobile {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#theme-toggle:active, #theme-toggle-mobile:active {
+  transform: scale(0.95);
+}
+
+/* Sun/Moon Icons */
+#theme-toggle i, #theme-toggle-mobile i {
+  transition: all 0.3s ease;
+}
+
+/* Pulse animation for active state */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+#theme-toggle.bg-blue-600 i, 
+#theme-toggle-mobile.bg-blue-600 i,
+#theme-toggle.dark\:bg-blue-400 i, 
+#theme-toggle-mobile.dark\:bg-blue-400 i {
+  animation: pulse 0.5s ease;
+}
+
+/* Tooltip for better UX */
+#theme-toggle::after, #theme-toggle-mobile::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+#theme-toggle:hover::after, #theme-toggle-mobile:hover::after {
+  opacity: 1;
+}
+/* Add dim mode styles */
+.dim\:bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.dim\:hover\:bg-gray-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.dim\:text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
+.dim body {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.dim .dark\:bg-gray-800 {
+  background-color: #2d3748;
+}
