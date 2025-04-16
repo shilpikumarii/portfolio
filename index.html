@@ -21,8 +21,8 @@
         <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
         <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
         <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
-        <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
         <li><a href="#certifications" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certificates</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
         <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
         <li>
           <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 dim:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dim:hover:bg-gray-700 transition-colors flex items-center justify-center w-10 h-10" data-tooltip="Toggle theme">
@@ -243,11 +243,14 @@
       </div>
     </div>
   </section>
-<!-- Certifications Section -->
+
+ 
+  <!-- Certifications Section -->
 <section id="certifications" class="py-20 bg-white dark:bg-gray-800">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">Certifications</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- First 3 certificates (visible by default) -->
       <!-- Python Internship Certificate -->
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
         <img src="CERTIFICATE/pycertificat.jpeg" alt="Python Internship Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
@@ -290,9 +293,8 @@
         </div>
       </div>
       
-      <div id="cert-more" class="hidden transition-all duration-500 ease-in-out">
-       <!-- JavaScript Certificate -->
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
+      <!-- Hidden certificates (4-6) -->
+      <div class="hidden more-cert bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
         <img src="CERTIFICATE/JAVASCRIPT.jpeg" alt="JavaScript Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">JavaScript Programming</h3>
         <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Great Learning</p>
@@ -305,8 +307,7 @@
         </div>
       </div>
       
-      <!-- HTML Certificate -->
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="hidden more-cert bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="CERTIFICATE/HTML.jpeg" alt="HTML Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">HTML Course Completion</h3>
         <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Great Learning</p>
@@ -318,12 +319,12 @@
           </a>
         </div>
       </div>
-      
-      <!-- Additional Certificate 1 -->
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
-        <img src="CERTIFICATE/cart1.jpg" alt="Frontend Development Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
-        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Frontend Development</h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Udemy</p>
+
+      <!-- Certificate 6 - AI Introduction -->
+      <div class="hidden more-cert bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="CERTIFICATE/cert6.jpg" alt="Introduction to AI Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Introduction to Artificial Intelligence</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Infosys | Springboard</p>
         <div class="mt-4 flex space-x-4">
           <a href="#" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fas fa-external-link-alt mr-2"></i> View Credential
@@ -331,32 +332,19 @@
         </div>
       </div>
       
-      <!-- Additional Certificate 2 -->
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-        <img src="CERTIFICATE/cert2.jpg" alt="CSS Mastery Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
-        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">CSS Mastery</h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Coursera</p>
+      <!-- Hidden certificates (7-9) -->
+      <div class="hidden more-cert bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
+        <img src="CERTIFICATE/cert5.jpg" alt="Kargil Vijay Diwas Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Kargil Vijay Diwas</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: AVIT College</p>
         <div class="mt-4 flex space-x-4">
           <a href="#" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fas fa-external-link-alt mr-2"></i> View Credential
           </a>
         </div>
       </div>
-      
-      <!-- Additional Certificate 3 -->
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="CERTIFICATE/cert3.jpg" alt="React Fundamentals Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
-        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">React Fundamentals</h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Scrimba</p>
-        <div class="mt-4 flex space-x-4">
-          <a href="#" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i> View Credential
-          </a>
-        </div>
-      </div>
-      
-      <!-- Additional Certificate 4 -->
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
+
+      <div class="hidden more-cert bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="CERTIFICATE/cert4.jpg" alt="UI/UX Design Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">UI/UX Design</h3>
         <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Google</p>
@@ -367,89 +355,131 @@
         </div>
       </div>
 
-      <!-- Certificate 5 - Kargil Vijay Diwas -->
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-        <img src="CERTIFICATE/cert5.jpg" alt="Kargil Vijay Diwas Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
-        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Kargil Vijay Diwas</h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: AVIT College</p>
+      <div class="hidden more-cert bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="CERTIFICATE/cart1.jpg" alt="Frontend Development Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Frontend Development</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Udemy</p>
         <div class="mt-4 flex space-x-4">
           <a href="#" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fas fa-external-link-alt mr-2"></i> View Credential
           </a>
         </div>
       </div>
-      
-      <!-- Certificate 6 - AI Introduction -->
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="CERTIFICATE/cert6.jpg" alt="Introduction to AI Certificate" class="rounded-lg w-full h-48 object-cover mb-4">
-        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Introduction to Artificial Intelligence</h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">Issued by: Infosys | Springboard</p>
-        <div class="mt-4 flex space-x-4">
-          <a href="#" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i> View Credential
-          </a>
-        </div>
-      </div>
-      </div>
-      
-      <div class="section-buttons">
-        <button onclick="toggleCerts()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-          View More Certificates
-        </button>
-      </div>
-        
-      
+    </div>
+    
+    <div class="text-center mt-8">
+      <button id="cert-toggle-btn" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+        View More Certificates
+      </button>
     </div>
   </div>
 </section>
-
   <!-- Projects Section -->
-  <section id="projects" class="py-20 bg-white dark:bg-gray-800">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">My Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- FOOTBALL Game -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-          <img src="IMAGE/game.jpg" alt="FOOTBALL Game" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">FOOTBALL Game</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">An interactive football game built with JavaScript.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/FOOTBALLgame" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- Alarm App -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
-          <img src="IMAGE/alarm-clock-app-senyaars.png" alt="Alarm App" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Alarm App</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A functional alarm application with JavaScript.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/Alarm-App" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-
-         <!-- Notice Form -->
+<section id="projects" class="py-20 bg-white dark:bg-gray-800">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">My Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- First 3 projects (visible by default) -->
+      <!-- FOOTBALL Game -->
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-        <img src="IMAGE/notice.jpg" alt="Notice Form" class="rounded-lg w-full h-48 object-cover mb-4">
-        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Notice Form</h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive notice submission form with validation.</p>
+        <img src="IMAGE/game.jpg" alt="FOOTBALL Game" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">FOOTBALL Game</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">An interactive football game built with JavaScript.</p>
         <div class="mt-4 flex space-x-4">
-          <a href="https://github.com/shilpikumarii/notice-form" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+          <a href="https://github.com/shilpikumarii/FOOTBALLgame" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fab fa-github mr-2"></i> GitHub
           </a>
-          <a href="https://shilpikumarii.github.io/notice-form/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+        </div>
+      </div>
+      
+      <!-- Alarm App -->
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="IMAGE/alarm-clock-app-senyaars.png" alt="Alarm App" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Alarm App</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">A functional alarm application with JavaScript.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/Alarm-App" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
           </a>
         </div>
       </div>
 
-      <div id="proj-more" class="hidden transition-all duration-500 ease-in-out">
-       <!-- Card Project -->
-       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
+      <!-- Weather App -->
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="IMAGE/WEATHER-APP.jpg" alt="Weather App" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Weather App</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">A weather forecasting application.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/WEATHER-APP" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+      
+      <!-- Hidden projects (4-6) -->
+      <!-- Quiz Game -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
+        <img src="IMAGE/Quiz Game.webp" alt="Quiz Game" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Quiz Game</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">An interactive quiz application.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/Quiz_game" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="IMAGE/CALCULATOR.png" alt="Calculator" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Calculator</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">A functional calculator application.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/CALCULATOR" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Banner -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="IMAGE/coffe-Banner.jpg" alt="Banner" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Banner Design</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive banner design.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/banner" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+      
+      <!-- Hidden projects (7-9) -->
+      <!-- TODO-App -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
+        <img src="IMAGE/TODO.jpg" alt="TODO App" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">TODO App</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">Another task management application.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/TODO-App" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Cat Pic App -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="IMAGE/cat-pic.jpg" alt="Cat Pic App" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Cat Pic App</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">An application displaying cat pictures.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/catpicapp" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Interactive Cards -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
         <img src="IMAGE/card.jpg" alt="Card Project" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Interactive Cards</h3>
         <p class="mt-2 text-gray-600 dark:text-gray-300">A collection of responsive card designs with hover effects.</p>
@@ -463,8 +493,21 @@
         </div>
       </div>
       
-       <!-- Form Project -->
-       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
+      <!-- Hidden projects (10-12) -->
+      <!-- Feedback -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
+        <img src="IMAGE/website-feedback-form.png" alt="Feedback" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Feedback System</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">A user feedback collection system.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/feedback" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Advanced Form -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="IMAGE/contact-forms.jpg" alt="Form Project" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Advanced Form</h3>
         <p class="mt-2 text-gray-600 dark:text-gray-300">A multi-step form with validation and submission handling.</p>
@@ -478,165 +521,41 @@
         </div>
       </div>
       
-        
-        <!-- Resume -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="IMAGE/res.jpg" alt="Resume" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Digital Resume</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive digital resume website.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/RESUME" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- TODO-LIST -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-          <img src="IMAGE/Todo List App.jpg" alt="TODO List" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">TODO List</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A task management application.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/TODO-LIST" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- WEATHER-APP -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
-          <img src="IMAGE/WEATHER-APP.jpg" alt="Weather App" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Weather App</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A weather forecasting application.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/WEATHER-APP" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- LANDING-PAGE -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="IMAGE/LANDING-PAGE.jpg" alt="Landing Page" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Landing Page</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive product landing page.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/LANDING-PAGE" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- Quiz Game -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-          <img src="IMAGE/Quiz Game.webp" alt="Quiz Game" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Quiz Game</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">An interactive quiz application.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/Quiz_game" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- TODO-App -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
-          <img src="IMAGE/TODO.jpg" alt="TODO App" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">TODO App</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">Another task management application.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/TODO-App" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- CALCULATOR -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="IMAGE/CALCULATOR.png" alt="Calculator" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Calculator</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A functional calculator application.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/CALCULATOR" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- Feedback -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-          <img src="IMAGE/website-feedback-form.png" alt="Feedback" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Feedback System</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A user feedback collection system.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/feedback" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-
-         <!-- Banner -->
-         <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
-          <img src="IMAGE/coffe-Banner.jpg" alt="Banner" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Banner Design</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive banner design.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/banner" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-
-         <!-- FOOTBALL Game -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-          <img src="IMAGE/game.jpg" alt="FOOTBALL Game" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">FOOTBALL Game</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">An interactive football game built with JavaScript.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/FOOTBALLgame" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- Alarm App -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
-          <img src="IMAGE/alarm-clock-app-senyaars.png" alt="Alarm App" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Alarm App</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">A functional alarm application with JavaScript.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/Alarm-App" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
-        </div>
-        
-        <!-- Cat Pic App -->
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="IMAGE/cat-pic.jpg" alt="Cat Pic App" class="rounded-lg w-full h-48 object-cover mb-4">
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Cat Pic App</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">An application displaying cat pictures.</p>
-          <div class="mt-4 flex space-x-4">
-            <a href="https://github.com/shilpikumarii/catpicapp" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
-          </div>
+      <!-- Digital Resume -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="IMAGE/res.jpg" alt="Resume" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Digital Resume</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive digital resume website.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/RESUME" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
         </div>
       </div>
       
-      <div class="section-buttons">
-        <button onclick="toggleProjects()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-          View More Projects
-        </button>
-      </div>
-        
-       
+      <!-- Notice Form -->
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
+        <img src="IMAGE/notice.jpg" alt="Notice Form" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Notice Form</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive notice submission form with validation.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/notice-form" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://shilpikumarii.github.io/notice-form/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+          </a>
+        </div>
       </div>
     </div>
-   
     
-  </section>
-
+    <div class="text-center mt-8">
+      <button id="project-toggle-btn" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+        View More Projects
+      </button>
+    </div>
+  </div>
+</section>
   <!-- Contact Section -->
   <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-700">
     <div class="container mx-auto px-6">

@@ -205,19 +205,56 @@ window.addEventListener('load', () => {
   }, 500);
 });
 
-// View More/Less functionality
-function toggleCerts() {
-  const certMore = document.getElementById('cert-more');
-  const btn = event.target;
-  certMore.classList.toggle('hidden');
-  btn.textContent = certMore.classList.contains('hidden') ? 'View More Certificates' : 'View Less Certificates';
-}
 
+// View More/Less functionality for Certificates
+document.getElementById('cert-toggle-btn').addEventListener('click', function() {
+  const hiddenCerts = document.querySelectorAll('#certifications .more-cert');
+  const btn = this;
+  
+  // Toggle all hidden certificates
+  hiddenCerts.forEach(cert => {
+    cert.classList.toggle('hidden');
+  });
+  
+  // Update button text
+  btn.textContent = hiddenCerts[0].classList.contains('hidden') 
+    ? 'View More Certificates' 
+    : 'View Less Certificates';
+  
+  // Reinitialize AOS for newly visible elements
+  AOS.refresh();
+});
+
+// View More/Less functionality for Projects
+document.getElementById('project-toggle-btn').addEventListener('click', function() {
+  const hiddenProjects = document.querySelectorAll('#projects .more-project');
+  const btn = this;
+  
+  // Toggle all hidden projects
+  hiddenProjects.forEach(project => {
+    project.classList.toggle('hidden');
+  });
+  
+  // Update button text
+  btn.textContent = hiddenProjects[0].classList.contains('hidden') 
+    ? 'View More Projects' 
+    : 'View Less Projects';
+  
+  // Reinitialize AOS for newly visible elements
+  AOS.refresh();
+});
 function toggleProjects() {
-  const projMore = document.getElementById('proj-more');
+  const hiddenProjects = document.querySelectorAll('#projects .hidden');
   const btn = event.target;
-  projMore.classList.toggle('hidden');
-  btn.textContent = projMore.classList.contains('hidden') ? 'View More Projects' : 'View Less Projects';
+  
+  hiddenProjects.forEach(project => {
+    project.classList.toggle('hidden');
+  });
+  
+  btn.textContent = hiddenProjects[0].classList.contains('hidden') ? 'View More Projects' : 'View Less Projects';
+  
+  // Reinitialize AOS for newly visible elements
+  AOS.refresh();
 }
 
 // Highlight active navigation link
