@@ -1,20 +1,16 @@
-// Initialize AOS for Scroll Animations
 AOS.init({
   duration: 800,
   once: true,
   easing: 'ease-in-out'
 });
 
-// Theme Toggle with 3 states (light, dark, dim)
 const themeToggle = document.getElementById('theme-toggle');
 const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 const body = document.body;
 
-// Possible theme states
 const themes = ['light', 'dark', 'dim'];
 let currentThemeIndex = 0;
 
-// Initialize theme from localStorage or system preference
 function initTheme() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
@@ -26,22 +22,16 @@ function initTheme() {
   applyTheme();
 }
 
-// Apply current theme
 function applyTheme() {
-  // Remove all theme classes first
   body.classList.remove('light', 'dark', 'dim');
   
-  // Add current theme class
   body.classList.add(themes[currentThemeIndex]);
-  
-  // Update icons
+
   updateThemeIcons();
   
-  // Save to localStorage
   localStorage.setItem('theme', themes[currentThemeIndex]);
 }
 
-// Update the theme icons
 function updateThemeIcons() {
   const themeIcon = document.getElementById('theme-icon');
   const themeIconMobile = document.getElementById('theme-icon-mobile');
@@ -59,7 +49,6 @@ function updateThemeIcons() {
   themeIconMobile.innerHTML = icons[themes[currentThemeIndex]];
 }
 
-// Toggle theme on button click
 function toggleTheme() {
   currentThemeIndex = (currentThemeIndex + 1) % themes.length;
   applyTheme();
@@ -68,7 +57,6 @@ function toggleTheme() {
 themeToggle.addEventListener('click', toggleTheme);
 themeToggleMobile.addEventListener('click', toggleTheme);
 
-// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -90,7 +78,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Contact form handling
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
@@ -107,7 +94,6 @@ if (contactForm) {
   });
 }
 
-// GSAP animations
 gsap.from(".hero-title", {
   duration: 1.5,
   y: -50,
@@ -123,7 +109,6 @@ gsap.from(".hero-subtitle", {
   ease: "power3.out"
 });
 
-// Typing animation
 const typingText = document.getElementById('typing-text');
 const professions = ["Web Developer", "Frontend Engineer", "UI/UX Enthusiast", "Problem Solver"];
 let professionIndex = 0;
@@ -156,10 +141,8 @@ function typeWriter() {
   }
 }
 
-// Start the typing animation after the initial animations
 setTimeout(typeWriter, 2000);
 
-// Mobile Menu Toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -170,7 +153,6 @@ mobileMenuButton.addEventListener('click', () => {
     : '<i class="fas fa-times text-xl"></i>';
 });
 
-// Close mobile menu when clicking a link
 document.querySelectorAll('#mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
@@ -178,7 +160,6 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
   });
 });
 
-// Back to Top Button
 const backToTopButton = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
@@ -196,7 +177,6 @@ backToTopButton.addEventListener('click', () => {
   });
 });
 
-// Loading Spinner
 window.addEventListener('load', () => {
   const spinner = document.getElementById('loading-spinner');
   spinner.style.opacity = '0';
@@ -205,42 +185,33 @@ window.addEventListener('load', () => {
   }, 500);
 });
 
-
-// View More/Less functionality for Certificates
 document.getElementById('cert-toggle-btn').addEventListener('click', function() {
   const hiddenCerts = document.querySelectorAll('#certifications .more-cert');
   const btn = this;
   
-  // Toggle all hidden certificates
   hiddenCerts.forEach(cert => {
     cert.classList.toggle('hidden');
   });
   
-  // Update button text
   btn.textContent = hiddenCerts[0].classList.contains('hidden') 
     ? 'View More Certificates' 
     : 'View Less Certificates';
   
-  // Reinitialize AOS for newly visible elements
   AOS.refresh();
 });
 
-// View More/Less functionality for Projects
 document.getElementById('project-toggle-btn').addEventListener('click', function() {
   const hiddenProjects = document.querySelectorAll('#projects .more-project');
   const btn = this;
   
-  // Toggle all hidden projects
   hiddenProjects.forEach(project => {
     project.classList.toggle('hidden');
   });
   
-  // Update button text
   btn.textContent = hiddenProjects[0].classList.contains('hidden') 
     ? 'View More Projects' 
     : 'View Less Projects';
   
-  // Reinitialize AOS for newly visible elements
   AOS.refresh();
 });
 function toggleProjects() {
@@ -253,11 +224,9 @@ function toggleProjects() {
   
   btn.textContent = hiddenProjects[0].classList.contains('hidden') ? 'View More Projects' : 'View Less Projects';
   
-  // Reinitialize AOS for newly visible elements
   AOS.refresh();
 }
 
-// Highlight active navigation link
 function highlightActiveNav() {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('nav a');
@@ -282,8 +251,6 @@ function highlightActiveNav() {
     });
   });
 }
-
-// Initialize theme when page loads
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   highlightActiveNav();
