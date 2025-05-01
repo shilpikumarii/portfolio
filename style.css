@@ -373,7 +373,6 @@ nav a:hover:after {
   transform: translateX(0);
 }
 
-/* Pulse animation for attention */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -387,7 +386,7 @@ nav a:hover:after {
 #download-resume:hover {
   animation: none;
 }
-/* Add these new styles to your style.css */
+
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -434,7 +433,6 @@ nav a:hover:after {
   animation: pulse 2s infinite;
 }
 
-/* Hover effects for blog cards */
 .blog-card {
   margin-bottom: 1.5rem;
   padding: 1rem;
@@ -455,8 +453,6 @@ nav a:hover:after {
   width: 100%;
 }
 
-
-/* Gallery styles */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -494,7 +490,6 @@ nav a:hover:after {
   transform: translateY(0);
 }
 
-/* Form status message styles */
 #form-status.success {
   color: #10b981;
 }
@@ -502,7 +497,7 @@ nav a:hover:after {
 #form-status.error {
   color: #ef4444;
 }
-/* Blog Modal Styles */
+
 #blog-modal {
   transition: opacity 0.3s ease;
 }
@@ -512,7 +507,6 @@ nav a:hover:after {
   pointer-events: auto;
 }
 
-/* Read More Button */
 .read-more-btn {
   cursor: pointer;
   background: none;
@@ -525,7 +519,6 @@ nav a:hover:after {
   text-decoration: underline;
 }
 
-/* Modal Content Styles */
 .prose {
   max-width: 65ch;
 }
