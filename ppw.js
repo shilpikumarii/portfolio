@@ -4,6 +4,7 @@ AOS.init({
   easing: 'ease-in-out'
 });
 
+// Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
 const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 const body = document.body;
@@ -24,20 +25,14 @@ function initTheme() {
 
 function applyTheme() {
   body.classList.remove('light', 'dark', 'dim');
-  
   body.classList.add(themes[currentThemeIndex]);
-
   updateThemeIcons();
-  
   localStorage.setItem('theme', themes[currentThemeIndex]);
 }
 
 function updateThemeIcons() {
   const themeIcon = document.getElementById('theme-icon');
   const themeIconMobile = document.getElementById('theme-icon-mobile');
-  
-  themeIcon.innerHTML = '';
-  themeIconMobile.innerHTML = '';
   
   const icons = {
     light: '<i class="fas fa-moon"></i>',
@@ -57,6 +52,7 @@ function toggleTheme() {
 themeToggle.addEventListener('click', toggleTheme);
 themeToggleMobile.addEventListener('click', toggleTheme);
 
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -65,7 +61,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 80, // Adjust for header height
+        top: targetElement.offsetTop - 80,
         behavior: 'smooth'
       });
       
@@ -78,71 +74,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    console.log({ name, email, message });
-    
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-  });
-}
-
-gsap.from(".hero-title", {
-  duration: 1.5,
-  y: -50,
-  opacity: 0,
-  ease: "power3.out"
-});
-
-gsap.from(".hero-subtitle", {
-  duration: 1.5,
-  y: 50,
-  opacity: 0,
-  delay: 0.3,
-  ease: "power3.out"
-});
-
-const typingText = document.getElementById('typing-text');
-const professions = ["Web Developer", "Frontend Engineer", "UI/UX Enthusiast", "Problem Solver"];
-let professionIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let isEnd = false;
-
-function typeWriter() {
-  const currentProfession = professions[professionIndex];
-  
-  if (isDeleting) {
-    typingText.textContent = currentProfession.substring(0, charIndex - 1);
-    charIndex--;
-  } else {
-    typingText.textContent = currentProfession.substring(0, charIndex + 1);
-    charIndex++;
-  }
-
-  if (!isDeleting && charIndex === currentProfession.length) {
-    isEnd = true;
-    isDeleting = true;
-    setTimeout(typeWriter, 1500);
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    professionIndex = (professionIndex + 1) % professions.length;
-    setTimeout(typeWriter, 500);
-  } else {
-    const speed = isDeleting ? 100 : 150;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-setTimeout(typeWriter, 2000);
-
+// Mobile menu toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -160,6 +92,7 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
   });
 });
 
+// Back to top button
 const backToTopButton = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
@@ -177,6 +110,7 @@ backToTopButton.addEventListener('click', () => {
   });
 });
 
+// Loading spinner
 window.addEventListener('load', () => {
   const spinner = document.getElementById('loading-spinner');
   spinner.style.opacity = '0';
@@ -185,6 +119,7 @@ window.addEventListener('load', () => {
   }, 500);
 });
 
+// Certifications toggle
 document.getElementById('cert-toggle-btn').addEventListener('click', function() {
   const hiddenCerts = document.querySelectorAll('#certifications .more-cert');
   const btn = this;
@@ -200,6 +135,7 @@ document.getElementById('cert-toggle-btn').addEventListener('click', function() 
   AOS.refresh();
 });
 
+// Projects toggle
 document.getElementById('project-toggle-btn').addEventListener('click', function() {
   const hiddenProjects = document.querySelectorAll('#projects .more-project');
   const btn = this;
@@ -214,19 +150,8 @@ document.getElementById('project-toggle-btn').addEventListener('click', function
   
   AOS.refresh();
 });
-function toggleProjects() {
-  const hiddenProjects = document.querySelectorAll('#projects .hidden');
-  const btn = event.target;
-  
-  hiddenProjects.forEach(project => {
-    project.classList.toggle('hidden');
-  });
-  
-  btn.textContent = hiddenProjects[0].classList.contains('hidden') ? 'View More Projects' : 'View Less Projects';
-  
-  AOS.refresh();
-}
 
+// Active nav highlighting
 function highlightActiveNav() {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('nav a');
@@ -251,6 +176,186 @@ function highlightActiveNav() {
     });
   });
 }
+
+// Resume download
+document.getElementById('download-resume').addEventListener('click', function(e) {
+  console.log('Resume downloaded');
+  setTimeout(() => {
+    alert('Thank you for downloading my resume! Feel free to reach out if you have any questions.');
+  }, 1000);
+});
+
+// Project Modal
+const projectCards = document.querySelectorAll('.project-card');
+const projectModal = document.getElementById('project-modal');
+const projectModalTitle = document.getElementById('project-modal-title');
+const projectModalContent = document.getElementById('project-modal-content');
+const closeProjectModal = document.getElementById('close-project-modal');
+
+const projectsData = {
+    "project-1": {
+        title: "Project 1 Title",
+        description: `
+            <p>This project used HTML, CSS, and JavaScript to create a responsive website.</p>
+            <p>Key technologies: 
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                </ul>
+            </p>
+            <img src="IMAGE/project1-screenshot.png" alt="Project 1 Screenshot">
+        `,
+    },
+    "project-2": {
+        title: "Project 2 Title",
+        description: "<p>A Java application for managing user data...</p>",
+    }
+};
+
+projectCards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        const projectId = `project-${index + 1}`;
+        if (projectsData[projectId]) {
+            projectModalTitle.textContent = projectsData[projectId].title;
+            projectModalContent.innerHTML = projectsData[projectId].description;
+            projectModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+closeProjectModal.addEventListener('click', () => {
+    projectModal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+});
+
+projectModal.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+        projectModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Blog Modal
+const blogPosts = {
+  octanet: {
+    title: "Web Development Internship at OCTANET SERVICES PVT LTD",
+    content: `
+      <p class="mb-4">Contributed to real projects using HTML, CSS, and JavaScript.</p>
+      <h4 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Key Responsibilities</h4>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Developed responsive UIs</li>
+        <li>Debugged layout issues</li>
+        <li>Collaborated in feature implementation</li>
+      </ul>
+    `
+  },
+  motioncut: {
+    title: "Python Programming Internship at MotionCut",
+    content: `
+      <p class="mb-4">Enhanced problem-solving by writing Python scripts and mini tools.</p>
+      <h4 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Key Learnings</h4>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Data manipulation with Pandas</li>
+        <li>Code optimization techniques</li>
+        <li>Automation using Python</li>
+      </ul>
+    `
+  },
+  prasunet: {
+    title: "Web Development Intern at Prasunet Pvt. Ltd.",
+    content: `
+      <p class="mb-4">Built and enhanced a professional portfolio website. Integrated dark mode, animations, and responsive design.</p>
+      <h4 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Key Achievements</h4>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Mobile responsive design</li>
+        <li>Dark mode toggle with animation</li>
+        <li>Stipend earned on successful completion</li>
+      </ul>
+    `
+  }
+};
+
+const blogModal = document.getElementById('blog-modal');
+const blogModalTitle = document.getElementById('blog-modal-title');
+const blogModalContent = document.getElementById('blog-modal-content');
+const closeBlogModal = document.getElementById('close-blog-modal');
+
+document.querySelectorAll('.read-more-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const blogId = btn.dataset.blogId;
+    const post = blogPosts[blogId];
+
+    if (post) {
+      blogModalTitle.textContent = post.title;
+      blogModalContent.innerHTML = post.content;
+      blogModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
+closeBlogModal.addEventListener('click', () => {
+  blogModal.classList.add('hidden');
+  document.body.style.overflow = 'auto';
+});
+
+blogModal.addEventListener('click', e => {
+  if (e.target === blogModal) {
+    blogModal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (!blogModal.classList.contains('hidden')) {
+      blogModal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    if (!projectModal.classList.contains('hidden')) {
+      projectModal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  }
+});
+
+// Contact Form
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formStatus = document.getElementById('form-status');
+  
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (response.ok) {
+      formStatus.textContent = 'Thank you for your message! I will get back to you soon.';
+      formStatus.classList.add('text-green-500');
+      formStatus.classList.remove('text-red-500', 'hidden');
+      form.reset();
+      
+      setTimeout(() => {
+        formStatus.classList.add('hidden');
+      }, 5000);
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch (error) {
+    formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+    formStatus.classList.add('text-red-500');
+    formStatus.classList.remove('text-green-500', 'hidden');
+  }
+});
+
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   highlightActiveNav();
