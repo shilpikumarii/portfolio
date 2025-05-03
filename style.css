@@ -121,7 +121,9 @@ html {
 .link-underline:hover:after {
   width: 100%;
 }
+/* All your existing CSS remains the same until the media queries */
 
+/* Fixed media queries */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -141,6 +143,37 @@ html {
     display: block;
   }
   
+  #mobile-menu {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  #mobile-menu.active {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
+  #home {
+    padding-top: 80px;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  #home .flex.flex-col.sm\:flex-row {
+    flex-direction: column;
+  }
+  
+  #home .flex.flex-col.sm\:flex-row a {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
   .project-card {
     margin: 0 auto 1.5rem;
     max-width: 100%;
@@ -149,6 +182,25 @@ html {
   .project-card img {
     height: auto;
     max-height: 200px;
+  }
+  
+  #about p, #skills p, #projects p {
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  #contact input, 
+  #contact textarea, 
+  #contact select {
+    padding: 10px;
+    font-size: 14px;
   }
 }
 
@@ -197,6 +249,8 @@ html {
     font-size: 14px;
   }
 }
+
+/* Rest of your existing CSS remains the same */
 #certifications .text-center {
   display: flex;
   justify-content: center;
