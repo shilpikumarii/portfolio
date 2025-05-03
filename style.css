@@ -532,3 +532,94 @@ nav a:hover:after {
 .prose ul {
   margin-bottom: 1rem;
 }
+#mobile-menu {
+  transition: all 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#mobile-menu.active {
+  max-height: 500px;
+  padding: 1rem 0;
+}
+@media (max-width: 768px) {
+  #home {
+    padding-top: 80px;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  #home .flex.flex-col.sm\:flex-row {
+    flex-direction: column;
+  }
+  
+  #home .flex.flex-col.sm\:flex-row a {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  .project-card {
+    margin: 0 auto 1.5rem;
+    max-width: 100%;
+  }
+  
+  .project-card img {
+    height: auto;
+    max-height: 200px;
+  }
+}
+/* Add to style.css */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+/* Add to style.css */
+.project-card, .blog-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover, .blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+/* Python Internship Projects Section */
+#python-internship .experience-details {
+  transition: all 0.3s ease;
+}
+
+#python-internship .bg-white, 
+#python-internship .dark\\:bg-gray-800 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#python-internship .bg-white:hover,
+#python-internship .dark\\:bg-gray-800:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #python-internship .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  #python-internship .experience-details {
+    padding: 1rem;
+  }
+}
+
+/* Make sure the section has proper spacing */
+section {
+  scroll-margin-top: 80px;
+}

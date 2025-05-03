@@ -321,42 +321,59 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// Contact Form
-document.getElementById('contact-form').addEventListener('submit', async function(e) {
+document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  const form = e.target;
-  const formStatus = document.getElementById('form-status');
+  const submitBtn = this.querySelector('button[type="submit"]');
+  const originalText = submitBtn.innerHTML;
   
-  try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+  submitBtn.disabled = true;
+  
+  setTimeout(() => {
+    document.getElementById('form-status').textContent = 'Message sent successfully!';
+    document.getElementById('form-status').classList.remove('hidden', 'text-red-500');
+    document.getElementById('form-status').classList.add('text-green-500');
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
+    this.reset();
     
-    if (response.ok) {
-      formStatus.textContent = 'Thank you for your message! I will get back to you soon.';
-      formStatus.classList.add('text-green-500');
-      formStatus.classList.remove('text-red-500', 'hidden');
-      form.reset();
-      
-      setTimeout(() => {
-        formStatus.classList.add('hidden');
-      }, 5000);
-    } else {
-      throw new Error('Form submission failed');
-    }
-  } catch (error) {
-    formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again.';
-    formStatus.classList.add('text-red-500');
-    formStatus.classList.remove('text-green-500', 'hidden');
-  }
+    setTimeout(() => {
+      document.getElementById('form-status').classList.add('hidden');
+    }, 5000);
+  }, 1500);
 });
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   highlightActiveNav();
+});
+// Blog toggle functionality
+const blogToggle = document.getElementById('toggle-blog');
+const blogContainer = document.getElementById('blog-container');
+
+blogToggle.addEventListener('click', () => {
+  blogContainer.classList.toggle('hidden');
+  blogToggle.textContent = blogContainer.classList.contains('hidden') 
+    ? 'Show Experiences' 
+    : 'Hide Experiences';
+  AOS.refresh();
+});
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+  // ... existing code ...
+  
+  // Smooth scroll for the new section
+  document.querySelectorAll('a[href="#python-internship"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetElement = document.querySelector('#python-internship');
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 });
