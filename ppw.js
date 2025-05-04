@@ -243,3 +243,21 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
       : 'Read More';
   });
 });
+function toggleDetails(id, button) {
+  const details = document.getElementById(id);
+  const isExpanded = details.classList.toggle('hidden');
+  
+  // Update button text and icon
+  if (isExpanded) {
+    button.innerHTML = 'Read More <i class="fas fa-chevron-down ml-1 text-xs"></i>';
+    button.setAttribute('aria-expanded', 'false');
+  } else {
+    button.innerHTML = 'Read Less <i class="fas fa-chevron-up ml-1 text-xs"></i>';
+    button.setAttribute('aria-expanded', 'true');
+  }
+  
+  // Smooth scroll to show the expanded content
+  if (!isExpanded) {
+    details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
