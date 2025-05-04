@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize AOS animations
   AOS.init({
     duration: 800,
     once: true,
     easing: 'ease-in-out'
   });
-
-  // Theme Toggle
   const themeToggle = document.getElementById('theme-toggle');
   const themeToggleMobile = document.getElementById('theme-toggle-mobile');
   const body = document.body;
@@ -54,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
   if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 
-  // Mobile menu toggle
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
@@ -74,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -96,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Back to top button
   const backToTopButton = document.getElementById('back-to-top');
   if (backToTopButton) {
     window.addEventListener('scroll', () => {
@@ -115,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Loading spinner
   const spinner = document.getElementById('loading-spinner');
   if (spinner) {
     window.addEventListener('load', () => {
@@ -126,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Certifications toggle
   const certToggleBtn = document.getElementById('cert-toggle-btn');
   if (certToggleBtn) {
     certToggleBtn.addEventListener('click', function() {
@@ -144,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Projects toggle
   const projectToggleBtn = document.getElementById('project-toggle-btn');
   if (projectToggleBtn) {
     projectToggleBtn.addEventListener('click', function() {
@@ -161,15 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
       AOS.refresh();
     });
   }
-
-  // Active nav highlighting
   function highlightActiveNav() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
-
     window.addEventListener('scroll', () => {
-      let current = '';
-      
+      let current = '';      
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -178,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
           current = section.getAttribute('id');
         }
       });
-
       navLinks.forEach(link => {
         link.classList.remove('text-blue-600', 'dark:text-blue-400', 'font-medium');
         if (link.getAttribute('href') === `#${current}`) {
@@ -187,8 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  // Resume download
   const downloadResume = document.getElementById('download-resume');
   if (downloadResume) {
     downloadResume.addEventListener('click', function(e) {
@@ -198,18 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1000);
     });
   }
-
-  // Contact form submission
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
-      
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
       submitBtn.disabled = true;
-      
       setTimeout(() => {
         const formStatus = document.getElementById('form-status');
         if (formStatus) {
@@ -220,19 +200,15 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
         this.reset();
-        
         setTimeout(() => {
           if (formStatus) formStatus.classList.add('hidden');
         }, 5000);
       }, 1500);
     });
   }
-
-  // Initialize theme and nav highlighting
   initTheme();
   highlightActiveNav();
 });
-// Blog read more functionality
 document.querySelectorAll('.read-more-btn').forEach(button => {
   button.addEventListener('click', function() {
     const blogCard = this.closest('.blog-card');
@@ -246,8 +222,6 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
 function toggleDetails(id, button) {
   const details = document.getElementById(id);
   const isExpanded = details.classList.toggle('hidden');
-  
-  // Update button text and icon
   if (isExpanded) {
     button.innerHTML = 'Read More <i class="fas fa-chevron-down ml-1 text-xs"></i>';
     button.setAttribute('aria-expanded', 'false');
@@ -255,9 +229,33 @@ function toggleDetails(id, button) {
     button.innerHTML = 'Read Less <i class="fas fa-chevron-up ml-1 text-xs"></i>';
     button.setAttribute('aria-expanded', 'true');
   }
-  
-  // Smooth scroll to show the expanded content
   if (!isExpanded) {
     details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
+document.querySelectorAll('.view-details-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const detailsContent = this.nextElementSibling;
+    const isExpanded = detailsContent.classList.toggle('hidden');
+    
+    if (isExpanded) {
+      this.innerHTML = 'View Details <i class="fas fa-chevron-down ml-1 text-xs"></i>';
+    } else {
+      this.innerHTML = 'View Less <i class="fas fa-chevron-up ml-1 text-xs"></i>';
+      detailsContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+});
+document.querySelectorAll('.read-more-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const blogCard = this.closest('.blog-card');
+    const blogContent = blogCard.querySelector('.blog-content');
+    const isExpanded = blogContent.classList.toggle('hidden');
+    if (isExpanded) {
+      this.innerHTML = 'Read More <i class="fas fa-chevron-down ml-1 text-xs"></i>';
+    } else {
+      this.innerHTML = 'Read Less <i class="fas fa-chevron-up ml-1 text-xs"></i>';
+      blogContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+});

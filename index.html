@@ -20,35 +20,32 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
   <header class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-50">
-    <!-- Replace your current nav with this improved version -->
 <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
   <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Shilpi Kumari</div>
-  
-  <!-- Desktop Navigation -->
-  <ul class="hidden md:flex space-x-6 items-center">
-    <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
-    <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
-    <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
-    <li><a href="#certifications" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certifications</a></li>
-    <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
-    <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
-    <li>
-      <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 dim:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dim:hover:bg-gray-700 transition-colors flex items-center justify-center w-10 h-10" data-tooltip="Toggle theme">
-        <span id="theme-icon" class="text-gray-800 dark:text-gray-200 dim:text-gray-300">
-          <i class="fas fa-moon dark:hidden dim:hidden"></i>
-          <i class="fas fa-sun hidden dark:inline dim:hidden"></i>
-          <i class="fas fa-adjust hidden dark:hidden dim:inline"></i>
-        </span>
-      </button>
-    </li>
-  </ul>
-  
-  <!-- Mobile Menu Button -->
+  <!-- Navigation -->
+<ul class="hidden md:flex space-x-6 items-center">
+  <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
+  <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
+  <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
+  <li><a href="#certifications" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certifications</a></li>
+  <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
+  <li><a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Internship</a></li>
+  <li><a href="#blog" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blog</a></li>
+  <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+  <li>
+    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 dim:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dim:hover:bg-gray-700 transition-colors flex items-center justify-center w-10 h-10" data-tooltip="Toggle theme">
+      <span id="theme-icon" class="text-gray-800 dark:text-gray-200 dim:text-gray-300">
+        <i class="fas fa-moon dark:hidden dim:hidden"></i>
+        <i class="fas fa-sun hidden dark:inline dim:hidden"></i>
+        <i class="fas fa-adjust hidden dark:hidden dim:inline"></i>
+      </span>
+    </button>
+  </li>
+</ul>
   <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none">
     <i class="fas fa-bars text-xl"></i>
   </button>
 </nav>
-
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white dark:bg-gray-800 shadow-lg z-40">
   <ul class="flex flex-col space-y-2 px-6 py-4">
@@ -57,6 +54,8 @@
     <li><a href="#skills" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
     <li><a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
     <li><a href="#certifications" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certifications</a></li>
+    <li><a href="#experience" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Internship</a></li>
+    <li><a href="#blog" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blog</a></li>
     <li><a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
     <li class="pt-4 flex justify-center">
       <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
@@ -71,27 +70,22 @@
   </header>
   <!-- Hero Section   -->
 <section id="home" class="h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
-  
   <div class="absolute top-0 left-0 w-full h-full opacity-10">
     <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-white animate-float"></div>
     <div class="absolute top-1/3 right-20 w-24 h-24 rounded-full bg-white animate-float animation-delay-2000"></div>
     <div class="absolute bottom-20 left-1/4 w-20 h-20 rounded-full bg-white animate-float animation-delay-4000"></div>
   </div>
-
   <div class="text-center px-4 z-10">
     <div class="flex justify-center mb-8" data-aos="fade-down">
       <div class="relative">
         <img src="IMAGE/pro.jpg" alt="Shilpi Kumari - Profile Photo" class="w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-white shadow-xl object-cover hover:scale-105 transition-transform duration-300">
         <div class="absolute -bottom-2 -right-2 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-      
-        </div>
+      </div>
       </div>
     </div>
-    
     <h1 class="text-5xl md:text-6xl font-bold text-white hero-title mb-4" data-aos="fade-down">
       Hi, I'm <span class="text-blue-200">Shilpi Kumari</span>
     </h1>
-  
     <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
       <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-100 hover:shadow-lg transition-all font-medium flex items-center justify-center">
         <i class="fas fa-laptop-code mr-2"></i> View Projects
@@ -106,9 +100,7 @@
            <i class="fas fa-eye mr-2"></i> View Resume
         </a>
       </div>
-
     </div>
-    
     <div class="mt-12 animate-bounce" data-aos="fade-up" data-aos-delay="600">
       <a href="#about" class="text-white text-sm flex flex-col items-center">
         <span>Scroll Down</span>
@@ -117,7 +109,6 @@
     </div>
   </div>
 </section>
-
 <section id="about" class="py-20 bg-white dark:bg-gray-800">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">About Me</h2>
@@ -129,11 +120,9 @@
         <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
           Hello! I'm Shilpi Kumari, a passionate Computer Science Engineering student at AVIT with expertise in full-stack web development and programming. My journey in tech began with building simple HTML pages during my first year of college, which quickly evolved into creating complex web applications using modern JavaScript frameworks.
         </p>
-        
         <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
           I specialize in building responsive web applications with React, Node.js, and MongoDB. My projects showcase my ability to solve real-world problems through code, like my Weather App that helps users plan their day or the Myntra Clone demonstrating e-commerce functionality.
         </p>
-        
         <div class="mb-8">
           <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Education</h3>
           <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
@@ -145,7 +134,6 @@
             </p>
           </div>
         </div>
-        
         <div class="flex space-x-6 items-center">
           <a href="https://github.com/shilpikumarii" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-2xl transition-colors" aria-label="Visit my GitHub profile">
             <i class="fab fa-github"></i>
@@ -160,7 +148,6 @@
             <span class="ml-2 text-sm font-medium">Portfolio</span>
           </a>
         </div>
-        
         <div class="mt-8">
           <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Looking For</h3>
           <div class="flex flex-wrap gap-2">
@@ -174,8 +161,7 @@
     </div>
   </div>
 </section>
-
-  <!-- Skills Section -->
+<!-- Skills Section -->
   <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-700">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">Skills</h2>
@@ -195,7 +181,6 @@
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="w-16 h-16 mx-auto">
           <h3 class="mt-4 text-xl font-bold text-blue-600 dark:text-blue-400">C</h3>
         </div>
-        
         
         <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center project-card" data-aos="zoom-in">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-16 h-16 mx-auto">
@@ -245,7 +230,6 @@
           <h3 class="mt-4 text-xl font-bold text-blue-600 dark:text-blue-400">Tailwind CSS</h3>
         </div>
         
-       
         <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center project-card" data-aos="zoom-in">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-16 h-16 mx-auto">
           <h3 class="mt-4 text-xl font-bold text-blue-600 dark:text-blue-400">Git & GitHub</h3>
@@ -258,9 +242,7 @@
       </div>
     </div>
   </section>
-
- 
-  <!-- Certifications Section -->
+<!-- Certifications Section -->
 <section id="certifications" class="py-20 bg-white dark:bg-gray-800">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">Certifications</h2>
@@ -383,20 +365,16 @@
     </div>
   </div>
 </section>
-
-  <!-- Projects Section -->
   <!-- Projects Section -->
 <section id="projects" class="py-20 bg-white dark:bg-gray-800">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">My Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
       <!-- Myntra Clone Project -->
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
         <img src="IMAGE/myntra-clone.jpg" alt="Myntra Clone E-commerce Website" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Myntra Clone</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-4">A responsive e-commerce website clone with product listings and cart functionality.</p>
-        
         <div class="project-details hidden" id="myntra-details">
           <div class="mb-4">
             <h4 class="font-semibold text-gray-800 dark:text-gray-200">Challenges & Solutions:</h4>
@@ -415,7 +393,6 @@
               </li>
             </ul>
           </div>
-          
           <div class="mb-4">
             <h4 class="font-semibold text-gray-800 dark:text-gray-200">Technologies:</h4>
             <div class="flex flex-wrap gap-2 mt-2">
@@ -426,21 +403,18 @@
             </div>
           </div>
         </div>
-        
         <button onclick="toggleDetails('myntra-details', this)" 
                 class="mt-4 text-blue-600 dark:text-blue-400 hover:underline focus:outline-none"
                 aria-expanded="false"
                 aria-controls="myntra-details">
           Read More <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        
         <div class="mt-4">
           <a href="https://github.com/shilpikumarii/MYNTRA" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fab fa-github mr-2"></i> GitHub
           </a>
         </div>
       </div>
-
       <!-- Weather App Project -->
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="IMAGE/WEATHER-APP.jpg" alt="Weather Application Screenshot" class="rounded-lg w-full h-48 object-cover mb-4">
@@ -461,7 +435,6 @@
               </li>
             </ul>
           </div>
-          
           <div class="mb-4">
             <h4 class="font-semibold text-gray-800 dark:text-gray-200">Technologies:</h4>
             <div class="flex flex-wrap gap-2 mt-2">
@@ -471,27 +444,23 @@
             </div>
           </div>
         </div>
-        
         <button onclick="toggleDetails('weather-details', this)" 
                 class="mt-4 text-blue-600 dark:text-blue-400 hover:underline focus:outline-none"
                 aria-expanded="false"
                 aria-controls="weather-details">
           Read More <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        
         <div class="mt-4">
           <a href="https://github.com/shilpikumarii/WEATHER-APP" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fab fa-github mr-2"></i> GitHub
           </a>
         </div>
       </div>
-
       <!-- Alarm App Project -->
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
         <img src="IMAGE/alarm-clock-app-senyaars.png" alt="Alarm Clock Application Interface" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Alarm App</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-4">A functional alarm application with JavaScript.</p>
-        
         <div class="project-details hidden" id="alarm-details">
           <div class="mb-4">
             <h4 class="font-semibold text-gray-800 dark:text-gray-200">Challenges & Solutions:</h4>
@@ -506,7 +475,6 @@
               </li>
             </ul>
           </div>
-          
           <div class="mb-4">
             <h4 class="font-semibold text-gray-800 dark:text-gray-200">Technologies:</h4>
             <div class="flex flex-wrap gap-2 mt-2">
@@ -517,21 +485,18 @@
             </div>
           </div>
         </div>
-        
         <button onclick="toggleDetails('alarm-details', this)" 
                 class="mt-4 text-blue-600 dark:text-blue-400 hover:underline focus:outline-none"
                 aria-expanded="false"
                 aria-controls="alarm-details">
           Read More <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        
         <div class="mt-4">
           <a href="https://github.com/shilpikumarii/Alarm-App" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fab fa-github mr-2"></i> GitHub
           </a>
         </div>
       </div>
-  
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
         <img src="IMAGE/Quiz Game.webp" alt="Quiz Game" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Quiz Game</h3>
@@ -542,7 +507,6 @@
           </a>
         </div>
       </div>
-
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="IMAGE/CALCULATOR.png" alt="Calculator" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Calculator</h3>
@@ -553,7 +517,6 @@
           </a>
         </div>
       </div>
-
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="IMAGE/game.jpg" alt="FOOTBALL Game" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">FOOTBALL Game</h3>
@@ -564,7 +527,6 @@
           </a>
         </div>
       </div>
-
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
         <img src="IMAGE/coffe-Banner.jpg" alt="Banner" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Banner Design</h3>
@@ -575,7 +537,6 @@
           </a>
         </div>
       </div>
-      
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
         <img src="IMAGE/TODO.jpg" alt="TODO App" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">TODO App</h3>
@@ -586,7 +547,6 @@
           </a>
         </div>
       </div>
-
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="IMAGE/cat-pic.jpg" alt="Cat Pic App" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Cat Pic App</h3>
@@ -597,7 +557,6 @@
           </a>
         </div>
       </div>
-
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
         <img src="IMAGE/card.jpg" alt="Card Project" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Interactive Cards</h3>
@@ -611,7 +570,6 @@
           </a>
         </div>
       </div>
-      
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
         <img src="IMAGE/website-feedback-form.png" alt="Feedback" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Feedback System</h3>
@@ -622,7 +580,6 @@
           </a>
         </div>
       </div>
-
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="IMAGE/contact-forms.jpg" alt="Form Project" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Advanced Form</h3>
@@ -636,7 +593,6 @@
           </a>
         </div>
       </div>
-      
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="200">
         <img src="IMAGE/res.jpg" alt="Resume" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Digital Resume</h3>
@@ -647,7 +603,6 @@
           </a>
         </div>
       </div>
-      
       <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
         <img src="IMAGE/notice.jpg" alt="Notice Form" class="rounded-lg w-full h-48 object-cover mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Notice Form</h3>
@@ -662,7 +617,6 @@
         </div>
       </div>
     </div>
-    
     <div class="text-center mt-8">
       <button id="project-toggle-btn" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
         View More Projects
@@ -673,120 +627,123 @@
 <!-- Internship Experience Section -->
 <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-700">
   <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">Internship Experience</h2>
-    
-    <!-- Motion Cut Internship -->
+    <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">Internship Experience</h2> 
+    <!-- Motion Cut Internship  -->
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8" data-aos="fade-up">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">🐍 Python Programming Internship</h3>
         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">Motion Cut</span>
       </div>
       <p class="text-gray-600 dark:text-gray-300 mb-4">Duration: 7 Days per project | Role: Python Developer Intern</p>
-      
-      <!-- Quiz Game Project -->
-      <div class="mb-6">
-        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">1. 🎮 Basic Quiz Game</h4>
-        <p class="text-gray-600 dark:text-gray-400 mb-2">A simple yet engaging quiz game to reinforce Python fundamentals.</p>
-        <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Objectives:</h5>
-        <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
-          <li>Designed multiple-choice questions with user interaction</li>
-          <li>Implemented a scoring system and feedback mechanism</li>
-          <li>Applied control flow, data structures, and functions</li>
-          <li>Allowed easy customization of quiz content</li>
+      <div class="mb-4">
+        <h4 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Projects Summary:</h4>
+        <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-1">
+          <li>🎮 Basic Quiz Game with scoring system</li>
+          <li>📝 Word Counter tool</li>
+          <li>💰 Expense Tracker application</li>
         </ul>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">OOP</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">File I/O</span>
-        </div>
       </div>
-      
-      <!-- Word Counter Project -->
-      <div class="mb-6">
-        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">2. 📝 Word Counter</h4>
-        <p class="text-gray-600 dark:text-gray-400 mb-2">A Python-based tool to count words in user-provided text.</p>
-        <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Objectives:</h5>
-        <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
-          <li>Processed and analyzed text using string manipulation</li>
-          <li>Displayed real-time word count</li>
-          <li>Handled errors like empty inputs gracefully</li>
-        </ul>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">String Manipulation</span>
-        </div>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">OOP</span>
+        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">File I/O</span>
       </div>
-      
-      <!-- Expense Tracker Project -->
-      <div>
-        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">3. 💰 Expense Tracker</h4>
-        <p class="text-gray-600 dark:text-gray-400 mb-2">A daily expense tracking system with analysis features.</p>
-        <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Objectives:</h5>
-        <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
-          <li>Categorized and stored expenses using dictionaries</li>
-          <li>Provided monthly and category-wise summaries</li>
-          <li>Created a simple text-based UI</li>
-        </ul>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Data Structures</span>
+      <button class="text-blue-600 dark:text-blue-400 hover:underline flex items-center view-details-btn">
+        View Details <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      </button>
+      <div class="details-content hidden mt-4">
+        <!-- Quiz Game Project -->
+        <div class="mb-6">
+          <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">1. 🎮 Basic Quiz Game</h4>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">A simple yet engaging quiz game to reinforce Python fundamentals.</p>
+          <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Objectives:</h5>
+          <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
+            <li>Designed multiple-choice questions with user interaction</li>
+            <li>Implemented a scoring system and feedback mechanism</li>
+            <li>Applied control flow, data structures, and functions</li>
+            <li>Allowed easy customization of quiz content</li>
+          </ul>
+        </div>
+        <!-- Word Counter Project -->
+        <div class="mb-6">
+          <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">2. 📝 Word Counter</h4>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">A Python-based tool to count words in user-provided text.</p>
+          <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Objectives:</h5>
+          <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
+            <li>Processed and analyzed text using string manipulation</li>
+            <li>Displayed real-time word count</li>
+            <li>Handled errors like empty inputs gracefully</li>
+          </ul>
+        </div> 
+        <!-- Expense Tracker Project -->
+        <div>
+          <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">3. 💰 Expense Tracker</h4>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">A daily expense tracking system with analysis features.</p>
+          <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Objectives:</h5>
+          <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
+            <li>Categorized and stored expenses using dictionaries</li>
+            <li>Provided monthly and category-wise summaries</li>
+            <li>Created a simple text-based UI</li>
+          </ul>
         </div>
       </div>
     </div>
-    
-    <!-- Octanet Internship -->
+    <!-- Octanet Internship Summary -->
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6" data-aos="fade-up">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
         <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">🌐 Web Development Internship</h3>
         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">Octanet</span>
       </div>
       <p class="text-gray-600 dark:text-gray-300 mb-4">Duration: 4 Weeks | Role: Frontend Developer Intern</p>
-      
-      <!-- Weather App Project -->
-      <div class="mb-6">
-        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">1. 🌦️ Weather App</h4>
-        <p class="text-gray-600 dark:text-gray-400 mb-2">A responsive app to fetch and display weather information.</p>
-        <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Highlights:</h5>
-        <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
-          <li>Integrated real-time weather data using API</li>
-          <li>Built clean UI with HTML, CSS, JavaScript</li>
-          <li>Displayed city-wise temperature and conditions</li>
+      <div class="mb-4">
+        <h4 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Projects Summary:</h4>
+        <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-1">
+          <li>🌦️ Weather App with API integration</li>
+          <li>💻 Responsive Landing Page</li>
+          <li>✅ To-Do List App with local storage</li>
         </ul>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">API Integration</span>
-        </div>
       </div>
-      
-      <!-- Landing Page Project -->
-      <div class="mb-6">
-        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">2. 💻 Responsive Landing Page</h4>
-        <p class="text-gray-600 dark:text-gray-400 mb-2">A visually appealing landing page built from scratch.</p>
-        <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Highlights:</h5>
-        <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
-          <li>Crafted with HTML5 and Tailwind CSS</li>
-          <li>Used animations and smooth scrolling</li>
-          <li>Mobile-first and cross-browser compatible</li>
-        </ul>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">HTML</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
-        </div>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">HTML</span>
+        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">CSS</span>
+        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
       </div>
-      
-      <!-- To-Do App Project -->
-      <div>
-        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">3. ✅ To-Do List App</h4>
-        <p class="text-gray-600 dark:text-gray-400 mb-2">A JavaScript-based to-do app to manage daily tasks.</p>
-        <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Highlights:</h5>
-        <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
-          <li>Add, delete, and mark tasks as completed</li>
-          <li>Stored task data in local storage</li>
-          <li>Clean and intuitive UI</li>
-        </ul>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Local Storage</span>
+      <button class="text-blue-600 dark:text-blue-400 hover:underline flex items-center view-details-btn">
+        View Details <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      </button>
+      <div class="details-content hidden mt-4">
+        <!-- Weather App Project -->
+        <div class="mb-6">
+          <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">1. 🌦️ Weather App</h4>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">A responsive app to fetch and display weather information.</p>
+          <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Highlights:</h5>
+          <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
+            <li>Integrated real-time weather data using API</li>
+            <li>Built clean UI with HTML, CSS, JavaScript</li>
+            <li>Displayed city-wise temperature and conditions</li>
+          </ul>
+        </div>
+        <!-- Landing Page Project -->
+        <div class="mb-6">
+          <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">2. 💻 Responsive Landing Page</h4>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">A visually appealing landing page built from scratch.</p>
+          <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Highlights:</h5>
+          <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
+            <li>Crafted with HTML5 and Tailwind CSS</li>
+            <li>Used animations and smooth scrolling</li>
+            <li>Mobile-first and cross-browser compatible</li>
+          </ul>
+        </div>
+        <!-- To-Do App Project -->
+        <div>
+          <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2">3. ✅ To-Do List App</h4>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">A JavaScript-based to-do app to manage daily tasks.</p>
+          <h5 class="font-bold text-gray-700 dark:text-gray-300 mb-2">Key Highlights:</h5>
+          <ul class="list-disc pl-6 mb-4 text-gray-600 dark:text-gray-400">
+            <li>Add, delete, and mark tasks as completed</li>
+            <li>Stored task data in local storage</li>
+            <li>Clean and intuitive UI</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -796,20 +753,17 @@
 <section id="blog" class="py-20 bg-white dark:bg-gray-800">
   <div class="container mx-auto px-6 max-w-4xl">
     <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">My Blog</h2>
-    
-    <!-- Blog Post -->
-    <article class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
-      <!-- Blog Header with Image -->
+    <article class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden blog-card" data-aos="fade-up">
       <div class="relative h-64 w-full">
         <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
              alt="Problem Solving in Web Development" 
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
         <div class="absolute bottom-0 left-0 p-6">
-          <h1 class="text-3xl md:text-4xl font-bold text-white">Navigating Challenges, Building Solutions: My Approach to Web Development</h1>
+          <h1 class="text-3xl md:text-4xl font-bold text-white">Navigating Challenges, Building Solutions</h1>
           <div class="flex items-center mt-4 text-gray-300">
             <span class="flex items-center">
-              <i class="far fa-calendar-alt mr-2"></i> 15th March 2025 _ 15th April 2025.
+              <i class="far fa-calendar-alt mr-2"></i> 15th March 2025
             </span>
             <span class="flex items-center ml-4">
               <i class="far fa-clock mr-2"></i> 5 min read
@@ -817,38 +771,35 @@
           </div>
         </div>
       </div>
-      
-      <!-- Blog Content -->
-      <div class="p-6 md:p-8 prose dark:prose-invert max-w-none">
+      <div class="p-6 md:p-8">
         <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
           In my journey as a Computer Science Engineering student, I've come to realize that web development is more than just writing code; it's about solving problems. Each project presents unique challenges, and it's how we navigate those challenges that truly defines our capabilities.
         </p>
-        
         <p class="text-gray-600 dark:text-gray-300 mb-6">
-          My portfolio website <a href="https://phenomenal-semifreddo-93521b.netlify.app/" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">(view here)</a> is a testament to this philosophy. Building it wasn't always a smooth process. I encountered hurdles that required me to think critically, adapt quickly, and find innovative solutions.
+          My portfolio website <a href="https://phenomenal-semifreddo-93521b.netlify.app/" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">(view here)</a> is a testament to this philosophy. Building it wasn't always a smooth process...
         </p>
-        
+        <button class="read-more-btn text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+          Read More <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </button>
+      </div>
+      <div class="blog-content hidden p-6 md:p-8 pt-0">
         <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4">Responsive Design Challenges</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
           For instance, when implementing the responsive design with Tailwind CSS, I initially struggled with ensuring consistent layout across various screen sizes. Instead of sticking to a rigid approach, I embraced Tailwind's utility-first principles, which allowed me to dynamically adjust the styling based on breakpoints. This experience taught me the importance of flexibility and the power of using the right tools for the job.
         </p>
-        
         <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg my-6 border-l-4 border-blue-500">
           <p class="text-gray-600 dark:text-gray-300 italic">
             "The measure of success is not whether you have a tough problem to deal with, but whether it's the same problem you had last year." — John Foster Dulles
           </p>
         </div>
-        
         <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4">JavaScript Debugging</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
           Another challenge arose when integrating interactive elements using JavaScript. I faced unexpected bugs that required meticulous debugging and a deeper understanding of asynchronous operations. I utilized online resources, documentation, and even sought help from online communities to overcome these obstacles. This process honed my problem-solving skills and reinforced the value of continuous learning.
         </p>
-        
         <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4">React Component Architecture</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
           Working with React has further developed my ability to break down complex user interfaces into manageable components. I learned to manage state effectively, handle user interactions, and optimize performance. Each React project I undertake enhances my ability to create scalable and maintainable applications.
         </p>
-        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
           <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
             <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-2">Key Takeaways:</h4>
@@ -871,16 +822,13 @@
             </div>
           </div>
         </div>
-        
         <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4">Looking Forward</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
           Beyond the technical skills (HTML, CSS, JavaScript, React, Node.js), I believe that my ability to learn quickly and adapt to new technologies is a key asset. The field of web development is constantly evolving, and I'm committed to staying up-to-date with the latest trends and best practices.
         </p>
-        
         <p class="text-gray-600 dark:text-gray-300 mb-6">
           I am eager to bring this problem-solving mindset, adaptability, and passion for web development to a challenging internship or entry-level position. I'm confident that I can contribute meaningfully to a team and continue to grow as a developer.
         </p>
-        
         <div class="border-t border-gray-200 dark:border-gray-600 pt-6 mt-8">
           <p class="text-gray-600 dark:text-gray-300 text-center">
             Thank you for reading! Feel free to <a href="#contact" class="text-blue-600 dark:text-blue-400 hover:underline">contact me</a> with any questions or opportunities.
@@ -888,8 +836,6 @@
         </div>
       </div>
     </article>
-    
-    <!-- Blog Navigation -->
     <div class="flex justify-between mt-12">
       <a href="#" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
         <i class="fas fa-arrow-left mr-2"></i> Previous Post
@@ -925,7 +871,6 @@
         <option value="Other">Other</option>
       </select>
     </div>
-    
     <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
       Send Message
     </button>
@@ -933,7 +878,6 @@
   </form>
 </div>
   </section>
-
   <footer class="bg-blue-600 text-white py-8">
     <div class="container mx-auto px-6 text-center">
       <div class="flex justify-center space-x-6 mb-6">
@@ -950,7 +894,6 @@
       <p>&copy; 2025 Shilpi Kumari. All rights reserved.</p>
     </div>
   </footer>
-
 <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
   <div class="bg-white dark:bg-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
     <div class="p-6">
@@ -962,7 +905,6 @@
     </div>
   </div>
 </div>
-
 <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition-all">
   <i class="fas fa-arrow-up"></i>
 </button>

@@ -19,6 +19,26 @@ html {
   100% { transform: translateY(0) rotate(0deg); }
 }
 
+@keyframes slideInFromLeft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .animate-fade-in {
   animation: fadeIn 1s ease-in-out;
 }
@@ -27,12 +47,28 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
+.animate-slide-left {
+  animation: slideInFromLeft 1s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideInFromRight 1s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
 .animation-delay-2000 {
   animation-delay: 2s;
 }
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
 }
 
 .typewriter {
@@ -50,24 +86,35 @@ html {
   position: relative;
 }
 
-
 .section-pattern {
   background-color: #f8fafc;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-.project-card {
+.project-card, .blog-card {
   margin-bottom: 1.5rem;
   padding: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   width: 100%;
 }
 
-.project-card:hover {
+.project-card:hover, .blog-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card {
+  transform: perspective(1000px) rotateY(-2deg);
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.blog-card:hover {
+  transform: perspective(1000px) rotateY(2deg) translateY(-5px);
 }
 
 #contact input, 
@@ -103,6 +150,7 @@ html {
 .btn-hover:active {
   transform: translateY(-1px);
 }
+
 .link-underline {
   position: relative;
 }
@@ -122,166 +170,48 @@ html {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    position: fixed;
-    top: 80px;
-    left: -100%;
-    width: 100%;
-    background: white;
-    transition: all 0.3s;
-  }
-  
-  nav ul.active {
-    left: 0;
-  }
-  
-  #mobile-menu-button {
-    display: block;
-  }
-  
-  #mobile-menu {
-    transition: all 0.3s ease;
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  #mobile-menu.active {
-    max-height: 500px;
-    padding: 1rem 0;
-  }
-
-  #home {
-    padding-top: 80px;
-    height: auto;
-    min-height: 100vh;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-  
-  #home .flex.flex-col.sm\:flex-row {
-    flex-direction: column;
-  }
-  
-  #home .flex.flex-col.sm\:flex-row a {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .project-card {
-    margin: 0 auto 1.5rem;
-    max-width: 100%;
-  }
-  
-  .project-card img {
-    height: auto;
-    max-height: 200px;
-  }
-  
-  #about p, #skills p, #projects p {
-    font-size: 0.9rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .project-card h3 {
-    font-size: 1.2rem;
-  }
-  
-  #contact input, 
-  #contact textarea, 
-  #contact select {
-    padding: 10px;
-    font-size: 14px;
-  }
+#download-resume {
+  position: relative;
+  overflow: hidden;
 }
 
-@media (max-width: 640px) {
-  .hero-title {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  #home .flex.flex-col.sm\:flex-row {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero-title {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  #about p, #skills p, #projects p {
-    font-size: 0.9rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .project-card h3 {
-    font-size: 1.2rem;
-  }
-  
-  #contact input, 
-  #contact textarea, 
-  #contact select {
-    padding: 10px;
-    font-size: 14px;
-  }
-}
-
-/* Rest of your existing CSS remains the same */
-#certifications .text-center {
-  display: flex;
-  justify-content: center;
+#download-resume:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
 
-#certifications button {
-  white-space: nowrap;
-  margin: 0 auto;
+#download-resume:hover:after {
+  transform: translateX(0);
 }
 
-#projects .text-center {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+#download-resume {
+  animation: pulse 2s infinite;
 }
 
-#projects button {
-  white-space: nowrap;
-  margin: 0 auto;
+#download-resume:hover {
+  animation: none;
 }
 
 #certifications .text-center, 
 #projects .text-center {
   display: flex;
   justify-content: center;
-  gap: 20px; 
+  gap: 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 #certifications button, 
 #projects button {
   white-space: nowrap;
+  margin: 0 auto;
   flex-shrink: 0;
 }
 
@@ -341,15 +271,8 @@ nav a:hover:after {
   transform: scale(0.95);
 }
 
-
 #theme-toggle i, #theme-toggle-mobile i {
   transition: all 0.3s ease;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
 }
 
 #theme-toggle.bg-blue-600 i, 
@@ -403,144 +326,6 @@ nav a:hover:after {
 .dim .dark\:bg-gray-800 {
   background-color: #2d3748;
 }
-/* Add these styles to your CSS */
-#download-resume {
-  position: relative;
-  overflow: hidden;
-}
-
-#download-resume:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-}
-
-#download-resume:hover:after {
-  transform: translateX(0);
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-#download-resume {
-  animation: pulse 2s infinite;
-}
-
-#download-resume:hover {
-  animation: none;
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.animate-slide-left {
-  animation: slideInFromLeft 1s ease-out;
-}
-
-.animate-slide-right {
-  animation: slideInFromRight 1s ease-out;
-}
-
-.animate-pulse {
-  animation: pulse 2s infinite;
-}
-
-.blog-card {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  width: 100%;
-  transform: perspective(1000px) rotateY(-2deg);
-}
-
-.blog-card:hover {
-  transform: perspective(1000px) rotateY(2deg) translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-#blog-modal .prose {
-  max-width: none;
-  width: 100%;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.gallery-item img {
-  transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-.gallery-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 15px;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
-  transform: translateY(0);
-}
 
 #form-status.success {
   color: #10b981;
@@ -550,40 +335,6 @@ nav a:hover:after {
   color: #ef4444;
 }
 
-#blog-modal {
-  transition: opacity 0.3s ease;
-}
-
-#blog-modal:not(.hidden) {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.read-more-btn {
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-}
-
-.read-more-btn:hover {
-  text-decoration: underline;
-}
-
-.prose {
-  max-width: 65ch;
-}
-
-.prose img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-}
-
-.prose ul {
-  margin-bottom: 1rem;
-}
 #mobile-menu {
   transition: all 0.3s ease;
   max-height: 0;
@@ -594,7 +345,100 @@ nav a:hover:after {
   max-height: 500px;
   padding: 1rem 0;
 }
+
+.blog-excerpt {
+  transition: all 0.3s ease;
+}
+
+.blog-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.blog-card.expanded .blog-content {
+  max-height: 2000px;
+}
+
+.blog-card.expanded .blog-excerpt {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.read-more-btn, .view-details-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.read-more-btn:hover, .view-details-btn:hover {
+  text-decoration: underline;
+}
+
+.read-more-btn::after {
+  content: '↓';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.blog-card.expanded .read-more-btn::after {
+  transform: rotate(180deg);
+}
+
+.blog-card.expanded .read-more-btn {
+  margin-top: 1rem;
+}
+
+.details-content {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+#python-internship .experience-details {
+  transition: all 0.3s ease;
+}
+
+#python-internship .bg-white, 
+#python-internship .dark\\:bg-gray-800 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#python-internship .bg-white:hover,
+#python-internship .dark\\:bg-gray-800:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
 @media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    background: white;
+    transition: all 0.3s;
+  }
+  
+  nav ul.active {
+    left: 0;
+  }
+  
+  #mobile-menu-button {
+    display: block;
+  }
+  
   #home {
     padding-top: 80px;
     height: auto;
@@ -614,8 +458,7 @@ nav a:hover:after {
     width: 100%;
     margin-bottom: 1rem;
   }
-}
-@media (max-width: 640px) {
+  
   .project-card {
     margin: 0 auto 1.5rem;
     max-width: 100%;
@@ -625,42 +468,30 @@ nav a:hover:after {
     height: auto;
     max-height: 200px;
   }
-}
-/* Add to style.css */
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.loading-spinner {
-  animation: spin 1s linear infinite;
-}
-/* Add to style.css */
-.project-card, .blog-card {
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.project-card:hover, .blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-/* Python Internship Projects Section */
-#python-internship .experience-details {
-  transition: all 0.3s ease;
-}
-
-#python-internship .bg-white, 
-#python-internship .dark\\:bg-gray-800 {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#python-internship .bg-white:hover,
-#python-internship .dark\\:bg-gray-800:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+  
+  #about p, #skills p, #projects p {
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  #contact input, 
+  #contact textarea, 
+  #contact select {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  section {
+    padding: 3rem 1rem;
+  }
+  
   #python-internship .grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -671,62 +502,27 @@ nav a:hover:after {
   }
 }
 
-/* Make sure the section has proper spacing */
-section {
-  scroll-margin-top: 80px;
-}
-/* Add these to your style.css */
-@media (max-width: 768px) {
-  /* Hero section adjustments */
+@media (max-width: 640px) {
   .hero-title {
     font-size: 2.5rem;
     line-height: 1.2;
   }
   
-  /* Project cards */
-  .project-card {
-    margin: 0 auto 1.5rem;
-    max-width: 100%;
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
   
-  .project-card img {
-    height: auto;
-    max-height: 200px;
-  }
-  
-  /* Contact form */
-  #contact input, 
-  #contact textarea, 
-  #contact select {
-    padding: 10px;
-    font-size: 14px;
-  }
-  
-  /* Section padding */
-  section {
-    padding: 3rem 1rem;
-  }
-  
-  /* Mobile menu */
-  #mobile-menu {
-    transition: all 0.3s ease;
-    max-height: 0;
-    overflow: hidden;
-  }
-  
-  #mobile-menu.active {
-    max-height: 500px;
-    padding: 1rem 0;
+  #home .flex.flex-col.sm\:flex-row {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
-  /* Hero section */
   .hero-title {
     font-size: 2rem;
   }
   
-  /* Button stacks */
   .flex.flex-col.sm\:flex-row {
     flex-direction: column;
   }
@@ -736,61 +532,37 @@ section {
     margin-bottom: 0.5rem;
   }
   
-  /* Skills grid */
   #skills .grid {
     grid-template-columns: 1fr;
   }
 }
-/* Blog Section Styles */
-.blog-card {
-  transition: all 0.3s ease;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-}
 
-.blog-excerpt {
-  transition: all 0.3s ease;
-}
-
-.blog-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.blog-card.expanded .blog-content {
-  max-height: 2000px; /* Adjust based on your content */
-}
-
-.blog-card.expanded .blog-excerpt {
-  opacity: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.read-more-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  display: flex;
-  align-items: center;
-}
-
-.read-more-btn::after {
-  content: '↓';
-  margin-left: 5px;
-  transition: transform 0.3s ease;
-}
-
-.blog-card.expanded .read-more-btn::after {
-  transform: rotate(180deg);
-}
-
-.blog-card.expanded .read-more-btn {
-  margin-top: 1rem;
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  #about p, #skills p, #projects p {
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  #contact input, 
+  #contact textarea, 
+  #contact select {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
