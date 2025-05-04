@@ -121,9 +121,7 @@ html {
 .link-underline:hover:after {
   width: 100%;
 }
-/* All your existing CSS remains the same until the media queries */
 
-/* Fixed media queries */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -676,4 +674,123 @@ nav a:hover:after {
 /* Make sure the section has proper spacing */
 section {
   scroll-margin-top: 80px;
+}
+/* Add these to your style.css */
+@media (max-width: 768px) {
+  /* Hero section adjustments */
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  /* Project cards */
+  .project-card {
+    margin: 0 auto 1.5rem;
+    max-width: 100%;
+  }
+  
+  .project-card img {
+    height: auto;
+    max-height: 200px;
+  }
+  
+  /* Contact form */
+  #contact input, 
+  #contact textarea, 
+  #contact select {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Section padding */
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  /* Mobile menu */
+  #mobile-menu {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  #mobile-menu.active {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero section */
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  /* Button stacks */
+  .flex.flex-col.sm\:flex-row {
+    flex-direction: column;
+  }
+  
+  .flex.flex-col.sm\:flex-row a {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Skills grid */
+  #skills .grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Blog Section Styles */
+.blog-card {
+  transition: all 0.3s ease;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-excerpt {
+  transition: all 0.3s ease;
+}
+
+.blog-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.blog-card.expanded .blog-content {
+  max-height: 2000px; /* Adjust based on your content */
+}
+
+.blog-card.expanded .blog-excerpt {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.read-more-btn::after {
+  content: '↓';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.blog-card.expanded .read-more-btn::after {
+  transform: rotate(180deg);
+}
+
+.blog-card.expanded .read-more-btn {
+  margin-top: 1rem;
 }

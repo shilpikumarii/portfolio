@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Shilpi Kumari's portfolio showcasing projects in Python, JavaScript, and web development.">
-  <meta name="keywords" content="portfolio, web developer, python developer, javascript, html, css, tailwind css">
-  <meta property="og:title" content="Shilpi Kumari - Portfolio">
-  <meta property="og:description" content="Computer Science Engineering student with expertise in Python, Java, and Web Development">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://phenomenal-semifreddo-93521b.netlify.app/">
+ <!-- Replace your current meta tags with these -->
+<meta name="description" content="Shilpi Kumari - Computer Science Engineering student with expertise in Python, Java, and Web Development. Check out my portfolio for projects and skills.">
+<meta name="keywords" content="portfolio, web developer, python developer, javascript, html, css, tailwind css, react, nodejs">
+<meta property="og:title" content="Shilpi Kumari - Portfolio | Web Developer">
+<meta property="og:description" content="Computer Science Engineering student with expertise in Python, Java, and Web Development. Check out my projects and skills.">
+<meta property="og:image" content="https://phenomenal-semifreddo-93521b.netlify.app/IMAGE/pro.jpg">
+<meta property="og:url" content="https://phenomenal-semifreddo-93521b.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
   <title>Shilpi Kumari - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
@@ -20,51 +21,54 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
   <header class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-50">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Shilpi Kumari</div>
-      
-    
-      <ul class="hidden md:flex space-x-6 items-center">
-        <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
-        <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
-        <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
-        <li><a href="#certifications" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certificates</a></li>
-        <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
-        <li>
-          <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 dim:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dim:hover:bg-gray-700 transition-colors flex items-center justify-center w-10 h-10" data-tooltip="Toggle theme">
-            <span id="theme-icon" class="text-gray-800 dark:text-gray-200 dim:text-gray-300">
-              <i class="fas fa-moon dark:hidden dim:hidden"></i>
-              <i class="fas fa-sun hidden dark:inline dim:hidden"></i>
-              <i class="fas fa-adjust hidden dark:hidden dim:inline"></i>
-            </span>
-          </button>
-        </li>
-      </ul>
-      
-      <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none">
-        <i class="fas fa-bars text-xl"></i>
+    <!-- Replace your current nav with this improved version -->
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+  <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Shilpi Kumari</div>
+  
+  <!-- Desktop Navigation -->
+  <ul class="hidden md:flex space-x-6 items-center">
+    <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
+    <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
+    <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
+    <li><a href="#certifications" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certifications</a></li>
+    <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
+    <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+    <li>
+      <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 dim:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dim:hover:bg-gray-700 transition-colors flex items-center justify-center w-10 h-10" data-tooltip="Toggle theme">
+        <span id="theme-icon" class="text-gray-800 dark:text-gray-200 dim:text-gray-300">
+          <i class="fas fa-moon dark:hidden dim:hidden"></i>
+          <i class="fas fa-sun hidden dark:inline dim:hidden"></i>
+          <i class="fas fa-adjust hidden dark:hidden dim:inline"></i>
+        </span>
       </button>
-    </nav>
-    
-    <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white dark:bg-gray-800 shadow-lg">
-      <ul class="flex flex-col space-y-2 px-6 py-4">
-        <li><a href="#home" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
-        <li><a href="#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
-        <li><a href="#skills" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
-        <li><a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
-        <li><a href="#certifications" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certificates</a></li>
-        <li><a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
-        <li class="pt-4">
-          <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-            <span id="theme-icon-mobile" class="text-gray-800 dark:text-gray-200">
-              <i class="fas fa-moon dark:hidden"></i>
-              <i class="fas fa-sun hidden dark:inline"></i>
-            </span>
-          </button>
-        </li>
-      </ul>
-    </div>
+    </li>
+  </ul>
+  
+  <!-- Mobile Menu Button -->
+  <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none">
+    <i class="fas fa-bars text-xl"></i>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white dark:bg-gray-800 shadow-lg z-40">
+  <ul class="flex flex-col space-y-2 px-6 py-4">
+    <li><a href="#home" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a></li>
+    <li><a href="#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
+    <li><a href="#skills" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a></li>
+    <li><a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a></li>
+    <li><a href="#certifications" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certifications</a></li>
+    <li><a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+    <li class="pt-4 flex justify-center">
+      <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+        <span id="theme-icon-mobile" class="text-gray-800 dark:text-gray-200">
+          <i class="fas fa-moon dark:hidden"></i>
+          <i class="fas fa-sun hidden dark:inline"></i>
+        </span>
+      </button>
+    </li>
+  </ul>
+</div>
   </header>
   <!-- Hero Section   -->
 <section id="home" class="h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
@@ -78,7 +82,7 @@
   <div class="text-center px-4 z-10">
     <div class="flex justify-center mb-8" data-aos="fade-down">
       <div class="relative">
-        <img src="IMAGE/pro.jpg" alt="Shilpi Kumari" class="w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-white shadow-xl object-cover hover:scale-105 transition-transform duration-300">
+        <img src="IMAGE/pro.jpg" alt="Shilpi Kumari - Profile Photo" class="w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-white shadow-xl object-cover hover:scale-105 transition-transform duration-300">
         <div class="absolute -bottom-2 -right-2 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
       
         </div>
@@ -101,11 +105,6 @@
            target="_blank"
            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
            <i class="fas fa-eye mr-2"></i> View Resume
-        </a>
-        <a href="https://drive.google.com/uc?export=download&id=1LAd5QFkah9HaBXMR_azujoNqLJfX9lps"
-           class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
-           id="download-resume">
-           <i class="fas fa-download mr-2"></i> Download PDF
         </a>
       </div>
 
@@ -130,7 +129,7 @@
         </div>
         <div class="md:w-2/3" data-aos="fade-left">
           <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            A passionate Computer Science Engineering student with expertise in Python, Java, Html, Css, JavaScript, NodeJs, React, and SQL. Strong grasp of OOP, DSA, and web development, with a keen interest in solving complex coding challenges and building innovative applications.
+            I’m a motivated Computer Science Engineering student at AVIT with a strong foundation in Python, Java, and web development technologies like HTML, CSS, JavaScript, React, and Node.js. I'm eager to apply my skills to challenging internships and entry-level opportunities where I can contribute and grow.
           </p>
           
           <div class="mb-8">
@@ -381,18 +380,20 @@
   <div class="container mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">My Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-     
-      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in">
-        <img src="IMAGE/game.jpg" alt="FOOTBALL Game" class="rounded-lg w-full h-48 object-cover mb-4">
-        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">FOOTBALL Game</h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">An interactive football game built with JavaScript.</p>
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="IMAGE/myntra-clone.jpg" alt="Myntra Clone" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Myntra Clone</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">A responsive e-commerce website clone with product listings and cart functionality.</p>
         <div class="mt-4 flex space-x-4">
-          <a href="https://github.com/shilpikumarii/FOOTBALLgame" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+          <a href="https://github.com/shilpikumarii/MYNTRA" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://shilpikumarii.github.io/MYNTRA/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
           </a>
         </div>
       </div>
+     
       
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="IMAGE/alarm-clock-app-senyaars.png" alt="Alarm App" class="rounded-lg w-full h-48 object-cover mb-4">
@@ -434,6 +435,17 @@
         <p class="mt-2 text-gray-600 dark:text-gray-300">A functional calculator application.</p>
         <div class="mt-4 flex space-x-4">
           <a href="https://github.com/shilpikumarii/CALCULATOR" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden more-project bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="IMAGE/game.jpg" alt="FOOTBALL Game" class="rounded-lg w-full h-48 object-cover mb-4">
+        <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">FOOTBALL Game</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">An interactive football game built with JavaScript.</p>
+        <div class="mt-4 flex space-x-4">
+          <a href="https://github.com/shilpikumarii/FOOTBALLgame" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
             <i class="fab fa-github mr-2"></i> GitHub
           </a>
         </div>
@@ -666,7 +678,114 @@
     </div>
   </div>
 </section>
-
+<!-- Blog Section -->
+<section id="blog" class="py-20 bg-white dark:bg-gray-800">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12" data-aos="fade-down">My Blog</h2>
+    
+    <!-- Blog Post -->
+    <article class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+      <!-- Blog Header with Image -->
+      <div class="relative h-64 w-full">
+        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+             alt="Problem Solving in Web Development" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h1 class="text-3xl md:text-4xl font-bold text-white">Navigating Challenges, Building Solutions: My Approach to Web Development</h1>
+          <div class="flex items-center mt-4 text-gray-300">
+            <span class="flex items-center">
+              <i class="far fa-calendar-alt mr-2"></i> 15th March 2025 _ 15th April 2025.
+            </span>
+            <span class="flex items-center ml-4">
+              <i class="far fa-clock mr-2"></i> 5 min read
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Blog Content -->
+      <div class="p-6 md:p-8 prose dark:prose-invert max-w-none">
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+          In my journey as a Computer Science Engineering student, I've come to realize that web development is more than just writing code; it's about solving problems. Each project presents unique challenges, and it's how we navigate those challenges that truly defines our capabilities.
+        </p>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          My portfolio website <a href="https://phenomenal-semifreddo-93521b.netlify.app/" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">(view here)</a> is a testament to this philosophy. Building it wasn't always a smooth process. I encountered hurdles that required me to think critically, adapt quickly, and find innovative solutions.
+        </p>
+        
+        <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4">Responsive Design Challenges</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          For instance, when implementing the responsive design with Tailwind CSS, I initially struggled with ensuring consistent layout across various screen sizes. Instead of sticking to a rigid approach, I embraced Tailwind's utility-first principles, which allowed me to dynamically adjust the styling based on breakpoints. This experience taught me the importance of flexibility and the power of using the right tools for the job.
+        </p>
+        
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg my-6 border-l-4 border-blue-500">
+          <p class="text-gray-600 dark:text-gray-300 italic">
+            "The measure of success is not whether you have a tough problem to deal with, but whether it's the same problem you had last year." — John Foster Dulles
+          </p>
+        </div>
+        
+        <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4">JavaScript Debugging</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Another challenge arose when integrating interactive elements using JavaScript. I faced unexpected bugs that required meticulous debugging and a deeper understanding of asynchronous operations. I utilized online resources, documentation, and even sought help from online communities to overcome these obstacles. This process honed my problem-solving skills and reinforced the value of continuous learning.
+        </p>
+        
+        <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4">React Component Architecture</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Working with React has further developed my ability to break down complex user interfaces into manageable components. I learned to manage state effectively, handle user interactions, and optimize performance. Each React project I undertake enhances my ability to create scalable and maintainable applications.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-2">Key Takeaways:</h4>
+            <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+              <li>Flexibility in design approach</li>
+              <li>Importance of debugging skills</li>
+              <li>Component-based architecture</li>
+              <li>Continuous learning mindset</li>
+            </ul>
+          </div>
+          <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-2">Technologies Used:</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm">HTML</span>
+              <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm">CSS</span>
+              <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+              <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm">React</span>
+              <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+              <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4">Looking Forward</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Beyond the technical skills (HTML, CSS, JavaScript, React, Node.js), I believe that my ability to learn quickly and adapt to new technologies is a key asset. The field of web development is constantly evolving, and I'm committed to staying up-to-date with the latest trends and best practices.
+        </p>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          I am eager to bring this problem-solving mindset, adaptability, and passion for web development to a challenging internship or entry-level position. I'm confident that I can contribute meaningfully to a team and continue to grow as a developer.
+        </p>
+        
+        <div class="border-t border-gray-200 dark:border-gray-600 pt-6 mt-8">
+          <p class="text-gray-600 dark:text-gray-300 text-center">
+            Thank you for reading! Feel free to <a href="#contact" class="text-blue-600 dark:text-blue-400 hover:underline">contact me</a> with any questions or opportunities.
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Blog Navigation -->
+    <div class="flex justify-between mt-12">
+      <a href="#" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+        <i class="fas fa-arrow-left mr-2"></i> Previous Post
+      </a>
+      <a href="#" class="flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+        Next Post <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
   <!-- Contact Section -->
   <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-700">
     <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg" data-aos="fade-left">

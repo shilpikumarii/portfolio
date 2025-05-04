@@ -232,3 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   highlightActiveNav();
 });
+// Blog read more functionality
+document.querySelectorAll('.read-more-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const blogCard = this.closest('.blog-card');
+    blogCard.classList.toggle('expanded');
+    
+    this.textContent = blogCard.classList.contains('expanded') 
+      ? 'Read Less' 
+      : 'Read More';
+  });
+});
