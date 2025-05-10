@@ -259,3 +259,24 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
     }
   });
 });
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuButton && mobileMenu) {
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenuButton.innerHTML = mobileMenu.classList.contains('hidden') 
+      ? '<i class="fas fa-bars text-xl"></i>' 
+      : '<i class="fas fa-times text-xl"></i>';
+    
+    mobileMenu.classList.toggle('active');
+  });
+
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('active');
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+    });
+  });
+}
